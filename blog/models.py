@@ -9,12 +9,19 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
-)
-content = models.TextField()
-created_on = models.DateTimeField(auto_now_add=True)
-status = models.IntegerField(choices=STATUS, default=0)
-excerpt = models.TextField(blank=True)
-updated_on = models.DateTimeField(auto_now=True)
+    )  # Corrected closing parenthesis
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    excerpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.title} | written by {self.author}"
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -25,5 +32,8 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)  # Whether the comment is approved or not
     created_on = models.DateTimeField(auto_now_add=True)  # Timestamp for when the comment was created
 
+    class Meta:
+        ordering = ["created_on"]
 
-
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
