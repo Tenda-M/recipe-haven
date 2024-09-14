@@ -16,4 +16,14 @@ status = models.IntegerField(choices=STATUS, default=0)
 excerpt = models.TextField(blank=True)
 updated_on = models.DateTimeField(auto_now=True)
 
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")  # Each comment is linked to a specific post
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")  # Each comment has an author (user)
+    body = models.TextField()  # The content of the comment
+    approved = models.BooleanField(default=False)  # Whether the comment is approved or not
+    created_on = models.DateTimeField(auto_now_add=True)  # Timestamp for when the comment was created
+
+
 
