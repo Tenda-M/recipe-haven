@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Shared Books</h2>
+<div class="shared-books">
+    {% for book in shared_books %}
+    <div class="book-item">
+        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+        <h3>{{ book.title }}</h3>
+        <p>Written by: {{ book.author }}</p>
+        <p>Shared by: {{ book.shared_by.username }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

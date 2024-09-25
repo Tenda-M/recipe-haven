@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Get involved:</h2>
+<p>Do you have any favorite cookbooks with amazing recipes? We’d love to hear your recommendations!</p>
+<p>Share your suggestions using the form below and check out what others have contributed!</p>
+<p>Posted by: {{ request.user.username }}</p>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}

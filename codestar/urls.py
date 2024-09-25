@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('share/', include('share.urls')),
     path("contact/", include("contact.urls")),  # Include the contact app's URLs
     path("about/", include("about.urls"), name="about-urls"),
     path('faq/', include('faq.urls')), 

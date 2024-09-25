@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  True
+DEBUG =  False
 
 ALLOWED_HOSTS = ["8000-tendam-recipehaven-jewf8wckm85.ws.codeinstitute-ide.net",".herokuapp.com"]
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'about',
     'contact',
      'faq',
+     'share',
 ]
 
 SITE_ID = 1
