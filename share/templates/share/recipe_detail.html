@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h3 class="card-title">{{ recipe.title }}</h3>
+                    <p><b>Author:</b> {{ recipe.author }}</p>
+                    <p><b>Ingredients:</b></p>
+                    <p>{{ recipe.ingredients }}</p>
+                    <p><b>Method:</b></p>
+                    <p>{{ recipe.methods }}</p>
+                    <p><b>Shared By:</b> {{ recipe.shared_by.username }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

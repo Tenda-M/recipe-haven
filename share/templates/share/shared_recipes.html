@@ -22,11 +22,17 @@
                         <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
                     {% endif %}
                     <div class="card-body">
-                        <h5 class="card-title">{{ recipe.title }}</h5>
+                        <!-- Make the title a clickable link to the recipe detail view -->
+                        <h5 class="card-title">
+                            <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
+                        </h5>
                         <p class="card-text"><b>Written by:</b> {{ recipe.author }}</p>
-                        <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients }}</p>
-                        <p class="card-text"><b>Methods:</b> {{ recipe.methods }}</p>
+                        <!-- Display an excerpt of ingredients -->
+                        <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients|slice:":100" }}...</p>
+                        <p class="card-text"><b>Methods:</b> {{ recipe.methods|slice:":100" }}...</p>
                         <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
+                        <!-- Add a "View Full Recipe" button -->
+                        <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full Recipe</a>
                     </div>
                 </div>
             </div>
