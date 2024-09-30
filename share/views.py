@@ -1,22 +1,17 @@
 from django.shortcuts import render, redirect
-from .forms import SharedBookForm
-from .models import SharedBook
+from .forms import SharedRecipeForm
+from .models import SharedRecipe
 
-# Create your views here.
-
-def share_view(request):
+def share_page_view(request):
     if request.method == 'POST':
-        form = SharedBookForm(request.POST, request.FILES)
+        form = SharedRecipeForm(request.POST, request.FILES)
         if form.is_valid():
-            shared_book = form.save(commit=False)
-            shared_book.shared_by = request.user
-            shared_book.save()
-            return redirect('shared_books')  # Redirect to the list of shared books
+            shared_recipe = form.save(commit=False)
+            shared_recipe.shared_by = request.user
+            shared_recipe.save()
+            return redirect('share')  # Redirect to refresh the page after submission
     else:
-        form = SharedBookForm()
+        form = SharedRecipeForm()
 
-    return render(request, 'share/share.html', {'form': form})
-
-def shared_books_view(request):
-    shared_books = SharedBook.objects.all()
-    return render(request, 'share/shared_books.html', {'shared_books': shared_books})
+    shared_recipes = SharedRecipe.objects.all()
+    return render(request, 'share/shared_recipes.html', {'form': form, 'shared_recipes': shared_recipes})

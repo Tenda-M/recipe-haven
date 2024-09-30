@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.share_view, name='share'),
-    path('shared_books/', views.shared_books_view, name='shared_books'),
+    # Use only one path for the share page that also displays shared recipes
+    path('', views.share_page_view, name='share'),
 ]

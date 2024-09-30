@@ -1,7 +1,7 @@
 from django import forms
-from .models import SharedBook
+from .models import SharedRecipe
 
-class SharedBookForm(forms.ModelForm):
+class SharedRecipeForm(forms.ModelForm):
     class Meta:
-        model = SharedBook
-        fields = ['title', 'author', 'image']
+        model = SharedRecipe
+        fields = ['title', 'author', 'image', 'ingredients', 'methods']  # Include new fields

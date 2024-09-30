@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- Share form -->
+    <h2>Get involved:</h2>
+    <p>If you know any recipes with amazing details, we would love to hear from you.</p>
+    <p>Fill out the information below and then check out what others have shared!</p>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+
+    <!-- Shared Recipes Section -->
+    <h2 class="mt-5">Shared Recipes</h2>
+    <div class="row">
+        {% for recipe in shared_recipes %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    {% if recipe.image %}
+                        <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.title }}</h5>
+                        <p class="card-text"><b>Written by:</b> {{ recipe.author }}</p>
+                        <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients }}</p>
+                        <p class="card-text"><b>Methods:</b> {{ recipe.methods }}</p>
+                        <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No shared recipes available yet. Be the first to share a recipe!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
