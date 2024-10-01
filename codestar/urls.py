@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#For media profile
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
-    #path('share/', include('share.urls')),
+    path('profile/', include('profiles.urls')),
     path('share/', include(('share.urls', 'share'), namespace='share')), 
     path("contact/", include("contact.urls")),  # Include the contact app's URLs
     path("about/", include("about.urls"), name="about-urls"),
@@ -29,3 +33,12 @@ urlpatterns = [
     path("", include("blog.urls"), name="blog-urls"),
     
 ]
+
+# Profilen to serve media profile files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+
