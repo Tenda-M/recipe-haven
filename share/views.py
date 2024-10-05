@@ -2,6 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import SharedRecipe
 from .forms import SharedRecipeForm 
 from django.contrib.auth.decorators import login_required
+#
+from django.contrib import messages
+from .models import SharedRecipe, SharedRecipeComment
+from .forms import SharedRecipeCommentForm
 
 @login_required
 def edit_recipe_view(request, recipe_id):
@@ -35,4 +39,55 @@ def share_page_view(request):
 def recipe_detail_view(request, recipe_id):
     recipe = get_object_or_404(SharedRecipe, id=recipe_id)
     return render(request, 'share/recipe_detail.html', {'recipe': recipe})
+
+#to handle the logic for displaying comments, adding new ones, and editing/deleting user-specific comments.
+@login_required
+def shared_recipe_detail(request, recipe_id):
+    recipe = get_object_or_404(SharedRecipe, id=recipe_id)
+    comments = recipe.comments.all().order_by('-created_on')
+    
+    if request.method == 'POST':
+        comment_form = SharedRecipeCommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.recipe = recipe
+            comment.save()
+            messages.success(request, 'Comment submitted and awaiting approval.')
+            return redirect('share:recipe_detail', recipe_id=recipe.id)
+    else:
+        comment_form = SharedRecipeCommentForm()
+    
+    return render(request, 'share/recipe_detail.html', {
+        'recipe': recipe,
+        'comments': comments,
+        'comment_form': comment_form,
+    })
+
+@login_required
+def edit_shared_recipe_comment(request, comment_id):
+    comment = get_object_or_404(SharedRecipeComment, id=comment_id, author=request.user)
+    
+    if request.method == 'POST':
+        form = SharedRecipeCommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your comment has been updated.')
+            return redirect('share:recipe_detail', recipe_id=comment.recipe.id)
+    else:
+        form = SharedRecipeCommentForm(instance=comment)
+    
+    return render(request, 'share/edit_comment.html', {'form': form})
+
+@login_required
+def delete_shared_recipe_comment(request, comment_id):
+    comment = get_object_or_404(SharedRecipeComment, id=comment_id, author=request.user)
+
+    if request.method == 'POST':
+        recipe_id = comment.recipe.id
+        comment.delete()
+        messages.success(request, 'Your comment has been deleted.')
+        return redirect('share:recipe_detail', recipe_id=recipe_id)
+    
+    return render(request, 'share/delete_comment.html', {'comment': comment})
 

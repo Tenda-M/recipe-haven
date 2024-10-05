@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
 <div class="container">
     <div class="row">
+        <!-- Recipe Details -->
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 {% if recipe.image %}
@@ -20,5 +21,51 @@
             </div>
         </div>
     </div>
+    
+    <!-- Comments and Form Section -->
+    <div class="row mt-5">
+        <!-- Comments Section on the Left -->
+        <div class="col-md-7">
+            <h3>Comments:</h3>
+            <div>
+                {% for comment in comments %}
+                <div class="p-3 mb-3 border rounded">
+                    <p><strong>{{ comment.author }}</strong> - {{ comment.created_on }}</p>
+                    <p>{{ comment.body }}</p>
+
+                    <!-- If the comment belongs to the current user, show edit and delete options -->
+                    {% if comment.author == user %}
+                    <a href="{% url 'share:edit_comment' comment_id=comment.id %}"
+                        class="btn btn-outline-secondary btn-sm">Edit</a>
+                    <a href="{% url 'share:delete_comment' comment_id=comment.id %}"
+                        class="btn btn-outline-danger btn-sm">Delete</a>
+                    {% endif %}
+
+                    <!-- Display approval status if not approved -->
+                    {% if not comment.approved %}
+                    <p class="text-muted">This comment is awaiting approval</p>
+                    {% endif %}
+                </div>
+                {% empty %}
+                <p>No comments yet. Be the first to leave one!</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Add Comment Form on the Right -->
+        <div class="col-md-4 offset-md-1">
+            {% if user.is_authenticated %}
+            <h3>Leave a comment:</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+            {% else %}
+            <p>Please log in to leave a comment.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
+
 {% endblock %}

@@ -15,3 +15,14 @@ class SharedRecipe(models.Model):
     @property
     def excerpt(self):
         return self.ingredients[:100]  # Display first 100 characters as a brief excerpt
+
+# To Ensure the code has a comment model linked to SharedRecipe
+class SharedRecipeComment(models.Model):
+    recipe = models.ForeignKey(SharedRecipe, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'Comment by {self.author} on {self.recipe}'
