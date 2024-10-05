@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('profile/', include('profiles.urls')),
+    path('profile/', include('profiles.urls', namespace='profiles')),
     path('share/', include(('share.urls', 'share'), namespace='share')), 
     path("contact/", include("contact.urls")),  # Include the contact app's URLs
     path("about/", include("about.urls"), name="about-urls"),
@@ -37,8 +37,5 @@ urlpatterns = [
 # Profilen to serve media profile files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
 
 

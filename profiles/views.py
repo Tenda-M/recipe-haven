@@ -17,3 +17,5 @@ def profile_view(request):
         'profile': profile,
         'user_recipes': user_recipes
     })
+
+
