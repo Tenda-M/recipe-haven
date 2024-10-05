@@ -1,44 +1,77 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
 <div class="container">
-    <!-- Share form -->
-    <h2>Get involved:</h2>
-    <p>If you know any recipes with amazing details, we would love to hear from you.</p>
-    <p>Fill out the information below and then check out what others have shared!</p>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-warning" type="submit">Submit</button>
-    </form>
+    <!-- Share Form Section -->
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2">
+            <div class="card p-4 mb-5">
+                <h2>Get involved:</h2>
+                <p>If you know any recipes with amazing details, we would love to hear from you.</p>
+                <p>Fill out the information below and then check out what others have shared!</p>
+
+                <!-- Display form errors if they exist -->
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>Please correct the errors below:</strong>
+                    <ul>
+                        {% for field in form %}
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <!-- Recipe form -->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-warning" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separator -->
+    <hr class="my-4">
 
     <!-- Shared Recipes Section -->
-    <h2 class="mt-5">Shared Recipes</h2>
     <div class="row">
+        <h2 class="col-12">Shared Recipes</h2>
+    </div>
+    <div class="row">
+        <!-- Loop through shared recipes -->
         {% for recipe in shared_recipes %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    {% if recipe.image %}
-                        <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <!-- Make the title a clickable link to the recipe detail view -->
-                        <h5 class="card-title">
-                            <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
-                        </h5>
-                        <p class="card-text"><b>Written by:</b> {{ recipe.author }}</p>
-                        <!-- Display an excerpt of ingredients -->
-                        <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients|slice:":100" }}...</p>
-                        <p class="card-text"><b>Methods:</b> {{ recipe.methods|slice:":100" }}...</p>
-                        <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
-                        <!-- Add a "View Full Recipe" button -->
-                        <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full Recipe</a>
-                    </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <!-- Make the title a clickable link to the recipe detail view -->
+                    <h5 class="card-title">
+                        <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
+                    </h5>
+                    <p class="card-text"><b>Written by:</b> {{ recipe.author }}</p>
+                    <!-- Display a brief of ingredients -->
+                    <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients|slice:":100" }}...</p>
+                    <p class="card-text"><b>Methods:</b> {{ recipe.methods|slice:":100" }}...</p>
+                    <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
+                    <!-- Add a "View Full Recipe" button -->
+                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full
+                        Recipe</a>
                 </div>
             </div>
+        </div>
         {% empty %}
-            <p>No shared recipes available yet. Be the first to share a recipe!</p>
+        <p>No shared recipes available yet. Be the first to share a recipe!</p>
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}

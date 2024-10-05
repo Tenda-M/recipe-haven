@@ -1,11 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import SharedRecipe
-from .forms import SharedRecipeForm 
-from django.contrib.auth.decorators import login_required
-#
-from django.contrib import messages
 from .models import SharedRecipe, SharedRecipeComment
-from .forms import SharedRecipeCommentForm
+from .forms import SharedRecipeForm, SharedRecipeCommentForm
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 @login_required
 def edit_recipe_view(request, recipe_id):
@@ -32,19 +29,30 @@ def delete_recipe_view(request, recipe_id):
     return render(request, 'share/delete_recipe.html', {'recipe': recipe})
 
 def share_page_view(request):
-    # logic for the view
     shared_recipes = SharedRecipe.objects.all()
-    return render(request, 'share/shared_recipes.html', {'shared_recipes': shared_recipes})
 
+    # Handle form submission
+    if request.method == 'POST':
+        form = SharedRecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Save form data but do not commit yet
+            shared_recipe = form.save(commit=False)
+            shared_recipe.shared_by = request.user  # Add the user who shared the recipe
+            shared_recipe.save()  # Save the form
+            messages.success(request, 'Recipe shared successfully!')
+            return redirect('share:share')  # Redirect back to share page
+    else:
+        form = SharedRecipeForm()  # Initialize an empty form for GET request
+
+    return render(request, 'share/shared_recipes.html', {
+        'shared_recipes': shared_recipes,
+        'form': form  # Add the form to the context
+    })
+
+@login_required
 def recipe_detail_view(request, recipe_id):
     recipe = get_object_or_404(SharedRecipe, id=recipe_id)
-    return render(request, 'share/recipe_detail.html', {'recipe': recipe})
-
-#to handle the logic for displaying comments, adding new ones, and editing/deleting user-specific comments.
-@login_required
-def shared_recipe_detail(request, recipe_id):
-    recipe = get_object_or_404(SharedRecipe, id=recipe_id)
-    comments = recipe.comments.all().order_by('-created_on')
+    comments = recipe.sharedrecipecomment_set.all().order_by('-created_on')
     
     if request.method == 'POST':
         comment_form = SharedRecipeCommentForm(request.POST)
@@ -90,4 +98,3 @@ def delete_shared_recipe_comment(request, comment_id):
         return redirect('share:recipe_detail', recipe_id=recipe_id)
     
     return render(request, 'share/delete_comment.html', {'comment': comment})
-
