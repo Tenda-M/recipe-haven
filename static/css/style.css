@@ -1,79 +1,185 @@
+/* Global Styles */
 body {
     background-color: #F7F5E6; /* Light cream for a welcoming background */
+    font-family: Lato, sans-serif;
 }
 
+/* Brand and Typography */
 .brand {
-    font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #8B4513; /* Dark brown, similar to chocolate */
+    color: #8B4513; /* Dark brown */
 }
 
+h2, .title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Theme Colors */
 .red-o {
-    color: #E63946; /* A warm red to evoke appetite */
-}
-
-.thin {
-    font-weight: 300;
+    color: #E63946; /* Warm red */
 }
 
 .light-bg {
-    background-color: #FFF8DC; /* A pale golden color, similar to flour or dough */
+    background-color: #FFF8DC; /* Pale golden */
 }
 
 .dark-bg {
-    background-color: #A0522D; /* Warm brown, similar to roasted coffee or cinnamon */
+    background-color: #A0522D; /* Warm brown */
 }
 
 .main-bg {
-    background-color: #FAF3DD; /* Soft light yellow for a food-themed site */
+    background-color: #FAF3DD; /* Soft light yellow */
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    background-color: #FFF8E7; /* Slightly off-white */
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Hide overflow */
+}
+
+.card img {
+    object-fit: cover;
+    height: 250px; /* Balance height */
+    width: 100%;
+}
+
+/* Navbar & Footer */
+.navbar, .navbar-light, .footer {
+    background-color: #A0522D; /* Brown color */
+    color: white; /* White text */
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    color: #FFE4C4; /* Cream hover */
+}
+
+.navbar .navbar-text {
+    color: #FFE4C4;
+}
+
+/* Footer text */
+.footer p {
+    color: white;
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Form Styles */
+form {
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea, 
+input[type="file"] {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+}
+
+/* Button Styles */
+.btn-warning {
+    background-color: #FBBF24;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    font-size: 1em;
+}
+
+.btn-warning:hover {
+    background-color: #F59E0B;
+}
+
+.btn-like {
+    color: #FF6347; /* Tomato red */
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: white;
+    background: #DC143C; /* Crimson */
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #FF4500; /* Orange red */
+    background: transparent;
+    border: none;
+}
+
+/* Style the "View Full Recipe" button like the submit button */
+.btn-primary {
+    background-color: #FBBF24; /* Custom yellow color to match the submit button */
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #F59E0B; /* Slightly darker shade for hover effect */
+    color: #fff;
+}
+
+/* Share Page Styles */
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .card {
+    width: 100%; /* Full width */
+    padding: 1em;
     border: none;
-    background-color: #FFF8E7; /* Slightly off-white, providing contrast to the background */
+    box-shadow: none;
 }
 
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #E76F51; /* Warm orange-red for highlighting text */
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
+/* Specific Components */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
     height: 33vh;
     width: 100%;
 }
 
 .masthead-text {
-    background-color: #C77D48; /* Warm brownish-orange */
+    background-color: #C77D48;
     color: white;
-    position: relative;
 }
 
 .masthead-image {
-    position: relative;
     overflow: hidden;
 }
 
@@ -85,20 +191,24 @@ body {
     height: 100%;
     width: 150%;
     background: #C77D48;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
 }
 
+/* Approval Messages */
+.approval {
+    color: #DDA0DD; /* Pale violet red */
+}
+
+/* Page Link Styling */
 .post-link {
     text-decoration: none;
-    color: #6B4226; /* Dark brown for readability */
+    color: #6B4226;
 }
 
 .post-link:hover,
 .page-link {
-    color: #D2691E; /* A darker warm brown for hover effect */
+    color: #D2691E; /* Darker warm brown */
 }
 
 .post-title {
@@ -108,161 +218,56 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: #6C757D; /* Soft gray for a muted subtitle */
+    color: #6C757D; /* Soft gray */
 }
 
-.btn-signup,
-.btn-edit {
-    background-color: #FFA07A; /* Light salmon color for buttons */
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #FFE4B5; /* A softer peach for hover effect */
-    color: #8B0000; /* Dark red for text on hover */
-}
-
-.link {
-    color: #C85A23; /* A rich caramel-like brown */
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #D2691E; /* Hover to a stronger brown */
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #FF6347; /* Tomato red to indicate like */
-    border: none;
-    background: transparent;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #DC143C; /* Crimson for delete */
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #FF4500; /* Orange red for hover */
-    background: transparent;
-    border: none;
-}
-
-.faded {
-    color: rgb(172, 175, 175);
-}
-
-.approval {
-    color: #DDA0DD; /* Pale violet red to denote approval message */
-}
-
-/************************************************************************/
-/* Home page Fixed Height to the Cards */
-/************************************************************************/
-
-.card {
-    height: 500px; /* Adjust the height as necessary */
-    overflow: hidden; /* Hide any overflow content */
-}
-.card img {
-    object-fit: cover; /* Ensures the image fits nicely */
-    height: 250px; /* Adjust the height for image balance */
-    width: 100%;
-}
-/************************************************************************/
-/* Set the color for both header and footer */
-/************************************************************************/
-/* Set the header and footer to the same brown color */
-.navbar, .navbar-light, .footer {
+/* Shared Recipes Adjustments */
+/* Style for the shared recipes section */
+.shared-recipes-section {
     background-color: #A0522D; /* Same brown color as the footer */
-    color: white; /* White text for contrast */
+    padding: 1em; /* Add padding for spacing */
+    text-align: center; /* Center text within the section */
+    margin-bottom: 2em; /* Space below the section */
+    border-radius: 5px; /* Optional: add rounded corners */
 }
 
-/* Navbar link colors */
-.navbar .nav-link,
-.navbar .navbar-brand {
-    color: white; /* Ensures readability on the brown background */
-}
-
-/* Hover effect for links in the navbar */
-.navbar .nav-link:hover {
-    color: #FFE4C4; /* Light cream color for hover effect */
-}
-
-/* the color for the navbar text */
-.navbar .navbar-text {
-    color: #FFE4C4 !important; /* Light cream color with higher specificity */
+/* Center and style the shared recipes title */
+.shared-recipes-title {
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold text */
+    font-size: 2em; /* Increase font size */
+    margin: 0 auto; /* Center heading within section */
+    text-decoration: underline; /* Underline the text */
+    display: inline-block; /* Adjust display to better control centering */
 }
 
 
-/************************************************************************/
-/* Footer text */
-/************************************************************************/
-.footer p {
-    color: white; /* White text for contrast */
+.shared-card {
+    border: #ffc107;
+    padding: 15px;
+    margin-bottom: 25px;
+    height: 500px;
 }
 
-/* Responsive navbar toggle */
-.navbar-toggler {
-    border-color: white;
+.share-img {
+    height: 60%;
+    width: 60%;
+    padding: 20px;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+.shared-text {
+    font-size: 2rem;
 }
 
-/************************************************************************/
-/* Contact us page */
-/************************************************************************/
-/* Container styling */
-.container {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    max-width: 100%;
+/* Miscellaneous */
+.image-container {
+    position: relative;
 }
 
-/* Form Headings */
-h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 1em;
-    text-align: left; /* Align the heading to the left */
-}
-
-p {
-    text-align: left; /* Align the paragraph to the left */
-    margin-bottom: 2em;
-    font-size: 1.2em;
-    color: #333;
-}
-
-/* Form input fields */
-input[type="text"], 
-input[type="email"], 
-textarea {
-    margin-bottom: 0.1em; /* Reduced spacing between fields */
-    padding: 0.75em;
-    width: 100%; /* Full width of the container */
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
-}
-
-/* Submit button */
-.btn-warning {
-    background-color: #FBBF24; /* Custom yellow color */
-    color: #fff;
-    border: none;
-    padding: 0.5em 1em; /* Smaller padding for a smaller button */
-    border-radius: 0.25em;
-    font-size: 1em;
-    margin-top: 1em;
-}
-
-.btn-warning:hover {
-    background-color: #F59E0B; /* Slightly darker shade for hover effect */
-    color: #fff;
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #E76F51;
 }

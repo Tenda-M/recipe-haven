@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-
 <div class="container">
     <!-- Share Form Section -->
-    <div class="row mt-5">
-        <div class="col-md-8 offset-md-2">
-            <div class="card p-4 mb-5">
+    <div class="row mt-0"> <!-- Remove top margin from the row -->
+        <div class="col-12">
+            <div class="card p-0 mb-0"> <!-- Remove padding and margin from the card -->
                 <h2>Get involved:</h2>
                 <p>If you know any recipes with amazing details, we would love to hear from you.</p>
                 <p>Fill out the information below and then check out what others have shared!</p>
+                <p>Posting as: {{ request.user.username }}</p>
 
                 <!-- Display form errors if they exist -->
                 {% if form.errors %}
@@ -41,23 +42,22 @@
     <hr class="my-4">
 
     <!-- Shared Recipes Section -->
-    <div class="row">
-        <h2 class="col-12">Shared Recipes</h2>
+    <div class="shared-recipes-section">
+        <h2 class="shared-recipes-title">Shared Recipes</h2>
     </div>
     <div class="row">
         <!-- Loop through shared recipes -->
         {% for recipe in shared_recipes %}
         <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card shared-card">
                 {% if recipe.image %}
-                <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                <img src="{{ recipe.image.url }}" class="card-img-top share-img" alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="card-body">
                     <!-- Make the title a clickable link to the recipe detail view -->
                     <h5 class="card-title">
                         <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
                     </h5>
-                    <p class="card-text"><b>Written by:</b> {{ recipe.author }}</p>
                     <!-- Display a brief of ingredients -->
                     <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients|slice:":100" }}...</p>
                     <p class="card-text"><b>Methods:</b> {{ recipe.methods|slice:":100" }}...</p>
@@ -65,6 +65,9 @@
                     <!-- Add a "View Full Recipe" button -->
                     <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full
                         Recipe</a>
+                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-view-recipe">View Full
+                        Recipe</a>
+
                 </div>
             </div>
         </div>
@@ -73,5 +76,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
