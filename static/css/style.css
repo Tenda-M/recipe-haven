@@ -177,8 +177,8 @@ body {
 /* Set the color for both header and footer */
 /************************************************************************/
 /* Set the header and footer to the same brown color */
-.navbar, .footer {
-    background-color: #A0522D; /* Brown color */
+.navbar, .navbar-light, .footer {
+    background-color: #A0522D; /* Same brown color as the footer */
     color: white; /* White text for contrast */
 }
 
@@ -193,7 +193,15 @@ body {
     color: #FFE4C4; /* Light cream color for hover effect */
 }
 
+/* the color for the navbar text */
+.navbar .navbar-text {
+    color: #FFE4C4 !important; /* Light cream color with higher specificity */
+}
+
+
+/************************************************************************/
 /* Footer text */
+/************************************************************************/
 .footer p {
     color: white; /* White text for contrast */
 }
@@ -205,4 +213,56 @@ body {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/************************************************************************/
+/* Contact us page */
+/************************************************************************/
+/* Container styling */
+.container {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    max-width: 100%;
+}
+
+/* Form Headings */
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: left; /* Align the heading to the left */
+}
+
+p {
+    text-align: left; /* Align the paragraph to the left */
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Form input fields */
+input[type="text"], 
+input[type="email"], 
+textarea {
+    margin-bottom: 0.1em; /* Reduced spacing between fields */
+    padding: 0.75em;
+    width: 100%; /* Full width of the container */
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+}
+
+/* Submit button */
+.btn-warning {
+    background-color: #FBBF24; /* Custom yellow color */
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em; /* Smaller padding for a smaller button */
+    border-radius: 0.25em;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.btn-warning:hover {
+    background-color: #F59E0B; /* Slightly darker shade for hover effect */
+    color: #fff;
 }
