@@ -305,3 +305,41 @@ input[type="file"] {
     left: -2px;
     background-color: #E76F51;
 }
+
+/***************************************************************************/
+/* login page*/
+/***************************************************************************/
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group .col-sm-8 {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+}
+
+.btn-signup {
+    background-color: #FBBF24; /* Match your submit button color */
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    font-size: 1em;
+}
+
+.btn-signup:hover {
+    background-color: #F59E0B;
+    color: #fff;
+}
