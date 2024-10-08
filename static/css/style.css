@@ -139,6 +139,40 @@ input[type="file"] {
     border: none;
 }
 
+/* Consistent styling for all action buttons */
+.btn-signout {
+    background-color: #FBBF24; /* Same yellow as other action buttons */
+    color: #fff; /* White text for contrast */
+    border: none; /* No border */
+    padding: 0.5em 1em; /* Consistent padding */
+    border-radius: 0.25em; /* Rounded corners */
+    font-size: 1em; /* Text size */
+    margin-top: 1em; /* Space above */
+    cursor: pointer; /* Pointer on hover */
+    text-decoration: none; /* Remove underline from text */
+}
+
+.btn-signout:hover {
+    background-color: #F59E0B; /* Darker shade for hover effect */
+    color: #fff; /* Keep text white */
+}
+
+.btn-signup {
+    background-color: #FBBF24; /* Custom yellow color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 0.5em 1em; /* Adjust padding as needed */
+    border-radius: 0.25em; /* Rounded corners */
+    font-size: 1em; /* Text size */
+    margin-top: 1em; /* Space above */
+}
+
+.btn-signup:hover {
+    background-color: #F59E0B; /* Darker shade for hover effect */
+    color: #fff;
+}
+
+
 /* Style the "View Full Recipe" button like the submit button */
 .btn-primary {
     background-color: #FBBF24; /* Custom yellow color to match the submit button */
