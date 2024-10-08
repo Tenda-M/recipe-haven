@@ -74,7 +74,13 @@ p {
 }
 
 .navbar .navbar-text {
-    color: #FFE4C4;
+    color: #f5eded !important; /* Apply a stronger color */
+    font-weight: bold; /* Optional: Bold text */
+}
+/* navbar text */
+.navbar-text {
+    color: #800e0e !important; /* Apply the desired color with !important */
+    font-weight: bold;
 }
 
 /* Footer text */
@@ -200,34 +206,20 @@ input[type="file"] {
 }
 
 /* Specific Components */
+/*
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
     height: 33vh;
     width: 100%;
-}
+}*/
 
+/*
 .masthead-text {
     background-color: #C77D48;
     color: white;
-}
-
-.masthead-image {
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #C77D48;
-    transform: skew(15deg);
-    z-index: 100;
-}
+}*/
 
 /* Approval Messages */
 .approval {
@@ -305,6 +297,22 @@ input[type="file"] {
     left: -2px;
     background-color: #E76F51;
 }
+
+/***************************************************************************/
+/* Recipe detail page*/
+/***************************************************************************/
+.masthead-image {
+    width: 100%;
+    height: 300px; /* Fixed height for the container */
+    overflow: hidden;
+}
+
+.masthead-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Or 'contain', based on whether you prefer cropping */
+}
+
 /***************************************************************************/
 /* About page*/
 /***************************************************************************/

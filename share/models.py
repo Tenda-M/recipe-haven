@@ -15,6 +15,11 @@ class SharedRecipe(models.Model):
     @property
     def excerpt(self):
         return self.ingredients[:100]  # Display first 100 characters as a brief excerpt
+    
+    @property
+    def methods_excerpt(self):
+        return self.methods[:100]  # Show the first 100 characters of methods
+   
 
 # To Ensure the code has a comment model linked to SharedRecipe
 class SharedRecipeComment(models.Model):
@@ -26,3 +31,5 @@ class SharedRecipeComment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.recipe}'
+
+  

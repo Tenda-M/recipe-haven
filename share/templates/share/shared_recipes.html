@@ -58,16 +58,12 @@
                     <h5 class="card-title">
                         <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
                     </h5>
-                    <!-- Display a brief of ingredients -->
-                    <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients|slice:":100" }}...</p>
-                    <p class="card-text"><b>Methods:</b> {{ recipe.methods|slice:":100" }}...</p>
+                    <!-- Display a brief of ingredients and methods using the properties -->
+                    <p class="card-text"><b>Ingredients:</b> {{ recipe.excerpt }}...</p>
+                    <p class="card-text"><b>Methods:</b> {{ recipe.methods_excerpt }}...</p>
                     <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
                     <!-- Add a "View Full Recipe" button -->
-                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full
-                        Recipe</a>
-                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-view-recipe">View Full
-                        Recipe</a>
-
+                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full Recipe</a>
                 </div>
             </div>
         </div>

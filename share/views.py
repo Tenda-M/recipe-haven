@@ -52,7 +52,9 @@ def share_page_view(request):
 @login_required
 def recipe_detail_view(request, recipe_id):
     recipe = get_object_or_404(SharedRecipe, id=recipe_id)
-    comments = recipe.sharedrecipecomment_set.all().order_by('-created_on')
+
+    # Fetch approved comments related to the recipe, ordered by newest first
+    comments = recipe.comments.filter(approved=True).order_by('-created_on')
     
     if request.method == 'POST':
         comment_form = SharedRecipeCommentForm(request.POST)
