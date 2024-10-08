@@ -305,6 +305,19 @@ input[type="file"] {
     left: -2px;
     background-color: #E76F51;
 }
+/***************************************************************************/
+/* About page*/
+/***************************************************************************/
+
+/* About page specific */
+.about-text {
+    text-align: center;
+}
+
+.about-text h2, 
+.about-text p {
+    text-align: center !important; /* Force centering */
+}
 
 /***************************************************************************/
 /* FAQ page*/
