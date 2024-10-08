@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+{% load static %}
+
 <div class="container">
     <!-- Share Form Section -->
     <div class="row mt-0"> <!-- Remove top margin from the row -->
@@ -50,23 +52,23 @@
         {% for recipe in shared_recipes %}
         <div class="col-md-4 mb-4">
             <div class="card shared-card">
-                {% if recipe.image %}
-                <img src="{{ recipe.image.url }}" class="card-img-top share-img" alt="{{ recipe.title }}">
+                {% if "placeholder" in recipe.image.url %}
+                    <img src="{% static 'images/placeholder.jpg' %}" class="card-img-top share-img" alt="placeholder">
+                {% else %}
+                    <img src="{{ recipe.image.url }}" class="card-img-top share-img" alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="card-body">
-                    <!-- Make the title a clickable link to the recipe detail view -->
                     <h5 class="card-title">
                         <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
                     </h5>
-                    <!-- Display a brief of ingredients and methods using the properties -->
                     <p class="card-text"><b>Ingredients:</b> {{ recipe.excerpt }}...</p>
                     <p class="card-text"><b>Methods:</b> {{ recipe.methods_excerpt }}...</p>
                     <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
-                    <!-- Add a "View Full Recipe" button -->
                     <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full Recipe</a>
                 </div>
             </div>
         </div>
+        
         {% empty %}
         <p>No shared recipes available yet. Be the first to share a recipe!</p>
         {% endfor %}
