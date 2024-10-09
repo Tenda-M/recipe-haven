@@ -64,24 +64,24 @@ p {
     color: white; /* White text */
 }
 
-.navbar .nav-link,
+/*.navbar .nav-link,
 .navbar .navbar-brand {
     color: white;
 }
 
 .navbar .nav-link:hover {
-    color: #FFE4C4; /* Cream hover */
-}
+    color: #FFE4C4; /* Cream hover 
+}*/
 
-.navbar .navbar-text {
+/*.navbar .navbar-text {
     color: #f5eded !important; /* Apply a stronger color */
-    font-weight: bold; /* Optional: Bold text */
-}
-/* navbar text */
+   /* font-weight: bold; /* Optional: Bold text 
+}*/
+/* navbar text *//*
 .navbar-text {
-    color: #800e0e !important; /* Apply the desired color with !important */
+    color: #800e0e !important; /* Apply the desired color with !important 
     font-weight: bold;
-}
+}*/
 
 /* Footer text */
 .footer p {
@@ -95,8 +95,40 @@ p {
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
+/****************************************************/
+/* Navbar Links */
+.navbar .nav-link
+ {
+    color: rgb(12, 12, 12) !important;  /* Set white text for links and brand */
+    font-weight: bold;
+}
 
+
+.navbar .nav-link:hover {
+    color: #FFE4C4 !important; /* Cream hover color for links */
+}
+
+.navbar .navbar-brand {
+    color: whitesmoke !important;  /* Set white text for links and brand */
+    font-weight: bold;
+}
+
+/* Navbar Text */
+.navbar .navbar-text {
+    color: #ffffff !important;  /* Change to white for better contrast */
+    font-weight: bold;
+}
+
+/* Active link: Add a highlight or halo around the active link */
+.navbar .nav-link.active, /* Use this if you are manually adding an 'active' class */
+.navbar .nav-link:focus, 
+.navbar .nav-link:active {
+    color: #FFE4C4 !important;  /* Change the text color for the active page */
+}
+
+/***************************************************/
 /* Form Styles */
+/**************************************************/
 form {
     margin: 0;
     padding: 0;
