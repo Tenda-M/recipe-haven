@@ -4,6 +4,9 @@ from django.contrib import messages
 from .models import Post, Comment
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -11,25 +14,11 @@ class PostList(generic.ListView):
     paginate_by = 6
     
 def post_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
-    """
-
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
-    
-    # Initialize comment form outside the POST block
+
     comment_form = CommentForm()
 
     if request.method == "POST":
@@ -39,12 +28,11 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
-            )
-            # Redirect to the same page after saving the comment
-            return redirect('post_detail', slug=post.slug)
+
+            # Adding the message only once
+            messages.success(request, 'Comment submitted and awaiting approval')
+
+            return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
 
     return render(
         request,
@@ -56,6 +44,7 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
 
 
 @login_required  # Make sure this is properly aligned to not be nested in `post_detail`
