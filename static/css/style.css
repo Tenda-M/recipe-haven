@@ -196,6 +196,8 @@ input[type="file"] {
     max-width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+    /* height: auto;  Ensure height is flexible */
+    /* min-height: 100vh; Optionally make sure it's at least as tall as the viewport */
 }
 
 .card {
@@ -326,6 +328,45 @@ input[type="file"] {
 .about-text p {
     text-align: center !important; /* Force centering */
 }
+
+/***************************************************************************/
+/* Share recipe */
+/***************************************************************************/
+
+/* Target only the shared_recipes.html container */
+.shared-recipes-container {
+    min-height: 100vh;  /* Ensure it grows at least the full height of the viewport */
+    padding-bottom: 50px;  /* Add padding if needed */
+    height: auto;  /* Ensure height is flexible */
+
+}
+
+/* Ensure the card stretches to fit content equally */
+.shared-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure even spacing between card content */
+    height: 100%; /* Ensure all cards have the same height */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+/* Style for the success notification */
+.alert {
+    max-width: 600px;  /* Limit the width of the notification */
+    margin: 20px auto;  /* Center it by using auto margins */
+    border: 2px solid #a05a2c;  /* Add a border matching your site's color */
+    background-color: #ffeadb;  /* Soft background color matching the theme */
+    padding: 10px 20px;  /* Add padding for better spacing */
+    border-radius: 5px;  /* Add a slight border radius for a smoother look */
+    text-align: center;  /* Center the text inside */
+    font-size: 16px;  /* Adjust font size if needed */
+}
+
 
 /***************************************************************************/
 /* FAQ page*/

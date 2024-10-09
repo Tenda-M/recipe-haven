@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 
-<div class="container">
+<div class="container shared-recipes-container">
     <!-- Share Form Section -->
     <div class="row mt-0"> <!-- Remove top margin from the row -->
         <div class="col-12">
@@ -53,22 +53,26 @@
         <div class="col-md-4 mb-4">
             <div class="card shared-card">
                 {% if "placeholder" in recipe.image.url %}
-                    <img src="{% static 'images/placeholder.jpg' %}" class="card-img-top share-img" alt="placeholder">
+                <img src="{% static 'images/placeholder.jpg' %}" class="card-img-top share-img" alt="placeholder">
                 {% else %}
-                    <img src="{{ recipe.image.url }}" class="card-img-top share-img" alt="{{ recipe.title }}">
+                <img src="{{ recipe.image.url }}" class="card-img-top share-img" alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}">{{ recipe.title }}</a>
                     </h5>
-                    <p class="card-text"><b>Ingredients:</b> {{ recipe.excerpt }}...</p>
+                    <p class="card-text"><b>Ingredients:</b> {{ recipe.ingredients_excerpt }}...</p>
                     <p class="card-text"><b>Methods:</b> {{ recipe.methods_excerpt }}...</p>
                     <p class="card-text"><b>Shared by:</b> {{ recipe.shared_by.username }}</p>
-                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full Recipe</a>
+                    <a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary">View Full
+                        Recipe</a>
+                    <!-- Add this line here to check the recipe id, when debug is complete remeber to remove below code-->
+                    <!--<a href="{% url 'share:recipe_detail' recipe_id=recipe.id %}" class="btn btn-primary" style="background-color: red;">View Full Recipe</a>-->
+
                 </div>
             </div>
         </div>
-        
+
         {% empty %}
         <p>No shared recipes available yet. Be the first to share a recipe!</p>
         {% endfor %}

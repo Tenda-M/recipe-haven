@@ -6,11 +6,11 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 class SharedRecipe(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.CharField(max_length=100)
-    image = CloudinaryField('image', default='placeholder')
-    ingredients = models.TextField(default="No ingredients provided")
-    methods = models.TextField(default="No methods provided")
+    title = models.CharField(max_length=200, blank=False, null=False)
+    author = models.CharField(max_length=100, blank=False, null=False)
+    image = CloudinaryField('image', blank=False, null=False)  # Image is required
+    ingredients = models.TextField(default="No ingredients provided", blank=False, null=False)  # Required
+    methods = models.TextField(default="No methods provided", blank=False, null=False)  # Required
     shared_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
