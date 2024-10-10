@@ -15,6 +15,9 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+# Importing message constants from Django's built-in messages framework
+from django.contrib.messages import constants as messages
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -23,6 +26,16 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dfuow5lo6',
     'API_KEY': '977516553948292',
     'API_SECRET': 'AAaX-BtCUrpzJfFptRAgxGIGc2Y',
+}
+
+# Explicitly mapping Django's message levels to Bootstrap's alert classes for consistency in styling.
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',          # Maps DEBUG messages to 'debug' class.
+    messages.INFO: 'info',            # Maps INFO messages to 'info' class (useful for informational alerts).
+    messages.SUCCESS: 'success',      # Maps SUCCESS messages to 'success' class (useful for success notifications).
+    messages.WARNING: 'warning',      # Maps WARNING messages to 'warning' class (useful for caution alerts).
+    messages.ERROR: 'danger',         # Maps ERROR messages to 'danger' class (used for critical errors).
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

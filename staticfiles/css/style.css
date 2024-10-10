@@ -53,9 +53,10 @@ p {
 }
 
 .card img {
-    object-fit: cover;
-    height: 250px; /* Balance height */
-    width: 100%;
+    width: 100%;  /* Make the image responsive to the container width */
+    height: auto;  /* Maintain the aspect ratio by adjusting the height automatically */
+    object-fit: cover;  /* Fills the container without stretching the image */
+    max-height: 400px;  /* Optional: limits the image height to avoid it becoming too tall */
 }
 
 /* Navbar & Footer */
@@ -64,18 +65,24 @@ p {
     color: white; /* White text */
 }
 
-.navbar .nav-link,
+/*.navbar .nav-link,
 .navbar .navbar-brand {
     color: white;
 }
 
 .navbar .nav-link:hover {
-    color: #FFE4C4; /* Cream hover */
-}
+    color: #FFE4C4; /* Cream hover 
+}*/
 
-.navbar .navbar-text {
-    color: #FFE4C4;
-}
+/*.navbar .navbar-text {
+    color: #f5eded !important; /* Apply a stronger color */
+   /* font-weight: bold; /* Optional: Bold text 
+}*/
+/* navbar text *//*
+.navbar-text {
+    color: #800e0e !important; /* Apply the desired color with !important 
+    font-weight: bold;
+}*/
 
 /* Footer text */
 .footer p {
@@ -89,8 +96,40 @@ p {
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
+/****************************************************/
+/* Navbar Links */
+.navbar .nav-link
+ {
+    color: rgb(12, 12, 12) !important;  /* Set white text for links and brand */
+    font-weight: bold;
+}
 
+
+.navbar .nav-link:hover {
+    color: #FFE4C4 !important; /* Cream hover color for links */
+}
+
+.navbar .navbar-brand {
+    color: whitesmoke !important;  /* Set white text for links and brand */
+    font-weight: bold;
+}
+
+/* Navbar Text */
+.navbar .navbar-text {
+    color: #ffffff !important;  /* Change to white for better contrast */
+    font-weight: bold;
+}
+
+/* Active link: Add a highlight or halo around the active link */
+.navbar .nav-link.active, /* Use this if you are manually adding an 'active' class */
+.navbar .nav-link:focus, 
+.navbar .nav-link:active {
+    color: #FFE4C4 !important;  /* Change the text color for the active page */
+}
+
+/***************************************************/
 /* Form Styles */
+/**************************************************/
 form {
     margin: 0;
     padding: 0;
@@ -190,6 +229,8 @@ input[type="file"] {
     max-width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+    /* height: auto;  Ensure height is flexible */
+    /* min-height: 100vh; Optionally make sure it's at least as tall as the viewport */
 }
 
 .card {
@@ -200,34 +241,20 @@ input[type="file"] {
 }
 
 /* Specific Components */
+/*
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
     height: 33vh;
     width: 100%;
-}
+}*/
 
+/*
 .masthead-text {
     background-color: #C77D48;
     color: white;
-}
-
-.masthead-image {
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #C77D48;
-    transform: skew(15deg);
-    z-index: 100;
-}
+}*/
 
 /* Approval Messages */
 .approval {
@@ -305,6 +332,88 @@ input[type="file"] {
     left: -2px;
     background-color: #E76F51;
 }
+
+/***************************************************************************/
+/* Recipe detail page*/
+/***************************************************************************/
+
+.masthead-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    max-height: 400px; /* You can adjust this to the desired height */
+}
+
+/* Ensure the row contains both sections side by side */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure both sections stretch to the same height */
+}
+/* Comments Section Styling */
+.col-md-8.card {
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #F7F5E6;
+    height: 100%; /* Ensures both sections align */
+    margin-left: 20px; /* Add some margin on the left */
+    margin-right: 20px; /* Add some margin on the right */
+    max-width: 98%;
+
+}
+
+.col-md-8.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+/* Leave a Comment Section Styling */
+.col-md-4.card {
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #F7F5E6;
+    height: 100%; /* Ensures both sections align */
+    margin-left: 20px; /* Add some margin on the left */
+    margin-right: 20px; /* Add some margin on the right */
+    max-width: 98%;
+}
+
+.col-md-4.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+/* Comment form submit button styling */
+#submitButton {
+    background-color: #FF8C00;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#submitButton:hover {
+    background-color: #FFA500;
+}
+
+/* General input field styling */
+#commentForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+
+
 /***************************************************************************/
 /* About page*/
 /***************************************************************************/
@@ -318,6 +427,239 @@ input[type="file"] {
 .about-text p {
     text-align: center !important; /* Force centering */
 }
+
+/***************************************************************************/
+/* Shared recipe page*/
+/***************************************************************************/
+
+/* Target only the shared_recipes.html container */
+.shared-recipes-container {
+    min-height: 100vh;  /* Ensure it grows at least the full height of the viewport */
+    padding-bottom: 50px;  /* Add padding if needed */
+    height: auto;  /* Ensure height is flexible */
+
+}
+
+/* Ensure the card stretches to fit content equally */
+.shared-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure even spacing between card content */
+    height: 100%; /* Ensure all cards have the same height */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+/* Style for the success notification */
+.alert {
+    max-width: 600px;  /* Limit the width of the notification */
+    margin: 20px auto;  /* Center it by using auto margins */
+    border: 2px solid #a05a2c;  /* Add a border matching your site's color */
+    background-color: #ffeadb;  /* Soft background color matching the theme */
+    padding: 10px 20px;  /* Add padding for better spacing */
+    border-radius: 5px;  /* Add a slight border radius for a smoother look */
+    text-align: center;  /* Center the text inside */
+    font-size: 16px;  /* Adjust font size if needed */
+}
+
+/* Custom container to add padding on the sides */
+.custom-container {
+    max-width: 90%;  /* Adjust this value as needed for the page width */
+    margin: 0 auto;  /* Center the container */
+    padding: 0 20px;  /* Add padding on the left and right sides */
+}
+
+/* Recipe Detail Styles */
+.recipe-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* List Styling */
+ul, ol {
+    margin-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+/* Comment Section Styling */
+.comment-section {
+    background-color: #F7F5E6; /* Light cream background consistent with the rest of the site */
+    border: 2px solid #FFA500; /* Orange border for consistency */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Spacing and colors inside the comment box */
+.comment-box p {
+    color: #333; /* Standard text color */
+    margin-bottom: 10px;
+}
+
+/* Comment Edit and Delete Buttons */
+.comment-box .btn {
+    color: #FFA500; /* Orange for action buttons */
+    border: 1px solid #FFA500; /* Orange border */
+    margin-right: 10px;
+    background-color: transparent; /* Transparent for consistency */
+}
+
+.comment-box .btn:hover {
+    background-color: #FFA500; /* Orange background on hover */
+    color: #fff; /* White text on hover */
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Global Styles */
+.custom-container {
+    max-width: 90%;  /* Control width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Recipe Title */
+.recipe-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    border-radius: 8px;
+}
+
+/* List Styling */
+ul, ol {
+    margin-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+/* Comments Section */
+.comment-list  {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F7F5E6;
+    border: 2px solid #FFA500;
+    border-radius: 5px;
+}
+
+.comment-post
+{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F7F5E6;
+    border: 2px solid #FFA500;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+/* Individual Comment Box */
+.comment-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #FFF8E7;
+    border: 2px solid #FFA500;
+    border-radius: 5px;
+}
+
+.comments-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+/* Comment Form Styling */
+form p {
+    font-weight: bold;
+    color: #8B4513;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    margin-top: 10px;
+    background-color: #FFA500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF8C00;
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+    .recipe-title {
+        font-size: 2rem;
+    }
+
+    .recipe-image {
+        max-height: 300px;
+    }
+}
+
 
 /***************************************************************************/
 /* FAQ page*/
