@@ -25,3 +25,4 @@ class SharedRecipeCommentForm(forms.ModelForm):
     class Meta:
         model = SharedRecipeComment
         fields = ['body']
+

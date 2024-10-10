@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.db import models  # Add this import to use models.Q for queries
 from .models import SharedRecipe, SharedRecipeComment
-from .forms import SharedRecipeForm, SharedRecipeCommentForm
+from .forms import SharedRecipeCommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .forms import SharedRecipeForm  # Add this line if it's missing
+
 
 @login_required
 def edit_recipe_view(request, recipe_id):
@@ -49,12 +52,15 @@ def share_page_view(request):
         'form': form  # Add the form to the context
     })
 
+
 @login_required
 def recipe_detail_view(request, recipe_id):
     recipe = get_object_or_404(SharedRecipe, id=recipe_id)
 
-    # Fetch approved comments related to the recipe, ordered by newest first
-    comments = recipe.comments.filter(approved=True).order_by('-created_on')
+    # Show all comments for the recipe if they are approved or if the author is the logged-in user
+    comments = recipe.comments.filter(
+        models.Q(approved=True) | models.Q(author=request.user)
+    ).order_by('-created_on')
     
     if request.method == 'POST':
         comment_form = SharedRecipeCommentForm(request.POST)
@@ -73,6 +79,7 @@ def recipe_detail_view(request, recipe_id):
         'comments': comments,
         'comment_form': comment_form,
     })
+
 
 @login_required
 def edit_shared_recipe_comment(request, comment_id):
@@ -100,3 +107,4 @@ def delete_shared_recipe_comment(request, comment_id):
         return redirect('share:recipe_detail', recipe_id=recipe_id)
     
     return render(request, 'share/delete_comment.html', {'comment': comment})
+

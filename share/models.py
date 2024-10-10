@@ -1,9 +1,7 @@
 from django.db import models  # Import models from django.db
 from django.contrib.auth.models import User
-
-from django.db import models
 from cloudinary.models import CloudinaryField
-from django.contrib.auth.models import User
+
 
 class SharedRecipe(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False)
@@ -35,5 +33,3 @@ class SharedRecipeComment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.recipe}'
-
-  

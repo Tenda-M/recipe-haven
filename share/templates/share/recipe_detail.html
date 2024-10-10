@@ -1,78 +1,91 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="custom-container">
-    <!-- Recipe Section -->
+
+<div class="custom-container mt-5">
     <div class="row align-items-center">
-        <!-- Recipe Title -->
+        <!-- Recipe Title (on the left) -->
         <div class="col-md-6">
             <h1 class="recipe-title">{{ recipe.title }}</h1>
         </div>
 
-        <!-- Recipe Image -->
-        <div class="col-md-6">
+        <!-- Recipe Image (on the right) -->
+        <div class="col-md-6 text-end"> <!-- Ensure text-end for image alignment -->
             {% if recipe.image %}
             <img src="{{ recipe.image.url }}" class="img-fluid recipe-image" alt="{{ recipe.title }}">
             {% endif %}
         </div>
     </div>
 
-    <div class="row mt-4">
-        <!-- Recipe Introduction and Details -->
-        <div class="col-12">
-            <h3>Introduction:</h3>
-            <p>{{ recipe.introduction }}</p>
+    <div class="row mt-4"></div>
+    <!-- Recipe Introduction and Ingredients -->
+    <div class="col-12">
+        <div class="card-body">
+            <!--<h3><strong>Introduction:</strong> {{ recipe.introduction }}</h3>-->
 
-            <!-- Ingredients List -->
-            <h3>Ingredients:</h3>
+            <h3>Ingredients</h3>
             <ul>
                 {% for ingredient in recipe.ingredients.splitlines %}
-                    <li>{{ ingredient }}</li>
+                <li>{{ ingredient }}</li>
                 {% endfor %}
             </ul>
 
-            <!-- Method List -->
-            <h3>Method:</h3>
+            <h3>Method</h3>
             <ol>
                 {% for step in recipe.methods.splitlines %}
-                    <li>{{ step }}</li>
+                <li>{{ step }}</li>
                 {% endfor %}
             </ol>
         </div>
     </div>
+</div>
 
-    <!-- Comments Section -->
-    <div class="row mt-5">
-        <!-- Display Comments -->
-        <div class="col-12">
-            
-            <div class="comment-list">
-                <h3 class="comments-title">Comments:</h3>
-                {% for comment in comments %}
-                <div class="comment-box">
-                    <p><strong>{{ comment.author }}</strong> - {{ comment.created_on }}</p>
-                    <p>{{ comment.body }}</p>
+<!-- Comments Section -->
+<div class="row mt-5">
+    <!-- Display Comments -->
+    <hr>
+    <div class="col-12">
+        
+        <div class="comment-list">
+            <h3 class="comments-title">Comments:</h3>
+            {% for comment in comments %}
+            <div class="comment-box 
+                {% if not comment.approved and comment.author == user %}
+                faded 
+                {% elif not comment.approved %}
+                d-none
+                {% endif %}">
+                <p><strong>{{ comment.author }}</strong> - {{ comment.created_on|date:"F j, Y, g:i a" }}</p>
+                <p>{{ comment.body|linebreaks }}</p>
 
-                    {% if comment.author == user %}
-                    <a href="{% url 'share:edit_comment' comment_id=comment.id %}" class="btn btn-outline-secondary btn-sm">Edit</a>
-                    <a href="{% url 'share:delete_comment' comment_id=comment.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
-                    {% endif %}
-
-                    {% if not comment.approved %}
-                    <p class="text-muted">This comment is awaiting approval</p>
-                    {% endif %}
+                <!-- Show Edit and Delete buttons only for the comment's author -->
+                {% if comment.author == user %}
+                <div class="mt-2">
+                    <a href="{% url 'share:edit_comment' comment_id=comment.id %}"
+                        class="btn btn-outline-secondary btn-sm">Edit</a>
+                    <a href="{% url 'share:delete_comment' comment_id=comment.id %}"
+                        class="btn btn-outline-danger btn-sm">Delete</a>
                 </div>
-                {% empty %}
-                <p>No comments yet. Be the first to leave one!</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+                {% endif %}
 
-    <!-- Add Comment Form -->
-    <div class="row mt-4">
-        <div class="col-12">
-            <div class="comment-post">
+                <!-- Show approval message if comment is not approved and belongs to the user -->
+                {% if not comment.approved and comment.author == user %}
+                <p class="approval text-muted" style="color: red;">This comment is awaiting approval</p>
+                {% endif %}
+            </div>
+            {% empty %}
+            <p>No comments yet. Be the first to leave one!</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Add Comment Form -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="comment-post">
             {% if user.is_authenticated %}
             <h3 class="comments-title">Leave a comment:</h3>
             <form method="post">
@@ -87,7 +100,6 @@
             {% else %}
             <p>Please log in to leave a comment.</p>
             {% endif %}
-        </div>
         </div>
     </div>
 </div>
