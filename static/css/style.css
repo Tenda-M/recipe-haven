@@ -317,6 +317,10 @@ input[type="file"] {
     left: -2px;
     background-color: #E76F51;
 }
+/*** edit shared recipe page***/
+.edit-shared-recipe {
+    margin-bottom: 20px; /* Or any space you'd like */
+}
 
 /***************************************************************************/
 /* Recipe detail page*/

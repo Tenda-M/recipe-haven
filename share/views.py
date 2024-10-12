@@ -44,6 +44,8 @@ def share_page_view(request):
             shared_recipe.save()  # Save the form
             messages.success(request, 'Recipe shared successfully!')
             return redirect('share:share')  # Redirect back to share page
+        else:
+            messages.error(request, 'There was an error with your submission. Please check the form and try again.')
     else:
         form = SharedRecipeForm()  # Initialize an empty form for GET request
 
