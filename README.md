@@ -1,3 +1,122 @@
+# Recipe Haven
+
+![mock-up images](docs/readme/responsive.PNG "Website preview at different resolutions")
+
+[View The Live Project Here](#) <!-- Add link to live site here -->
+
+## Purpose of the Project
+Recipe Haven is a community-driven platform for home-cooked meal recipes. This project provides users with a space to discover delicious recipes, share their own, and engage in discussions with fellow food enthusiasts.
+
+When users visit Recipe Haven, they are welcomed with a homepage that encourages them to explore popular recipes. Registered users can access additional features, such as sharing their own recipes and participating in the comments section.
+
+## Table Of Contents
+1. [Introduction](#Introduction)
+    1. [Scenario](#Scenario)
+2. [UX](#UX)
+    1. [User Stories](#User-Stories)
+    2. [Design Thinking](#Design-Thinking)
+3. [Features](#Features)
+    1. [Design Features](#Design-Features)
+    2. [Existing Features](#Existing-Features)
+    3. [Future Adaptations](#Future-Adaptations)
+4. [Issues and Bugs](#Issues-and-Bugs)
+5. [Technologies Used](#Technologies-Used)
+    1. [Main Languages Used](#Main-Languages-Used)
+    2. [Frameworks, Libraries & Programs Used](#Frameworks,-Libraries-&-Programs-Used)
+6. [Testing](#Testing)
+7. [Deployment](#Deployment)
+8. [Credits](#Credits)
+9. [Acknowledgements](#Acknowledgements)
+
+---
+
+## Introduction
+Recipe Haven
+
+Welcome to Recipe Haven! A community platform where users can discover, share, and explore delicious home-cooked recipes.
+
+### Scenario
+
+In today’s digital age, the joy of cooking and sharing recipes is more accessible than ever. Recipe enthusiasts no longer have to rely solely on printed cookbooks or traditional word-of-mouth sharing. Platforms like Recipe Haven allow users to connect over their love of food, explore new cuisines, and contribute their own culinary creations to a growing collection of recipes.
+
+Consider Recipe Haven as the perfect digital space for home cooks who want to share their favorite family dishes, create new recipes, or simply find inspiration for their next meal. While many may enjoy browsing recipes online, some want to go a step further by contributing their own creations to a community of like-minded food lovers.
+
+Recipe Haven’s user-friendly interface allows individuals to create an account, upload their recipes, and comment on others’ posts, fostering a sense of connection and collaboration in the kitchen. Additionally, the platform caters to both novice and experienced cooks, giving everyone a chance to engage, learn, and share in a space that celebrates all things food.
+
+In a world where time is precious and convenience is key, Recipe Haven gives users the ability to browse and share recipes at any time, from any place. Whether it's a quick dinner idea or a complex holiday meal, the platform offers a wealth of options for any occasion. With these capabilities, Recipe Haven enhances the traditional experience of sharing recipes, bringing it into the modern age of connectivity and digital interaction.
+
+With the above in mind, let's explore Recipe Haven together!
+
+## UX
+### User Stories
+- As a user, I want to register and log in to share my recipes.
+- As a user, I want to edit and delete the recipes I have posted.
+- As a user, I want to comment on recipes shared by others and engage with the community.
+- As a user, I want to see the most popular or highly-rated recipes.
+
+### Design Thinking
+The platform is designed to offer a user-friendly and visually appealing experience. Its simple navigation, clean design, and responsive layout ensure users can easily explore and share recipes.
+
+## Features
+### Design Features
+- A modern, responsive design that adapts to various screen sizes.
+- Flexbox-based layout for recipe cards ensuring consistent alignment.
+- Interactive navigation, including a dropdown menu for FAQ and About sections.
+
+### Existing Features
+- User registration, login, and profile management.
+- Recipe sharing functionality with fields for title, ingredients, methods, and images.
+- Commenting and interaction on shared recipes.
+- Pagination for browsing recipes.
+
+### Future Adaptations
+- Integration of a rating system for recipes.
+- Social media sharing buttons to extend the recipe audience.
+- Implementation of a search function to filter recipes by ingredients or cuisine types.
+
+## Issues and Bugs
+- Resolved issues with recipe form submission.
+- Adjusted layout for consistent display of recipe cards.
+- Ongoing improvements for mobile responsiveness.
+
+## Technologies Used
+### Main Languages Used
+- HTML, CSS, JavaScript for frontend development.
+- Python (Django) for backend logic.
+- SQL (PostgreSQL/MySQL) for database management.
+
+### Frameworks, Libraries & Programs Used
+- Django for backend web development.
+- Bootstrap for responsive design and layout.
+- Cloudinary for image storage.
+
+## Testing
+Manual testing was conducted for all key features, including recipe submission, profile management, and commenting functionality. Testing ensures that all components work smoothly on various devices and browsers.
+
+## Deployment
+- The application was deployed using Heroku, and the database was configured with PostgreSQL.
+- Cloudinary was integrated to manage image uploads for recipes.
+
+## Credits
+### Content
+- Recipe content was provided by the community and contributors.
+  
+### People
+- Project development and design by [Your Name].
+
+## Acknowledgements
+Special thanks to the Recipe Haven community for their contributions and feedback.
+
+
+
+
+
+
+##############################################################################################################
+#############################################################################################################
+
+[#19](https://github.com/Tenda-M/recipe-haven/issues/19)
+[#19](https://github.com/Tenda-M/recipe-haven/issues/19)
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Tatenda Mudehwe,
@@ -129,3 +248,4 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
