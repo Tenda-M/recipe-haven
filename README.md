@@ -15,6 +15,7 @@ When users visit Recipe Haven, they are welcomed with a homepage that encourages
 2. [UX](#UX)
     1. [User Stories](#User-Stories)
     2. [Design Thinking](#Design-Thinking)
+    3. [Colour Scheme](#Colour-Scheme)
 3. [Features](#Features)
     1. [Design Features](#Design-Features)
     2. [Existing Features](#Existing-Features)
@@ -49,13 +50,51 @@ With the above in mind, let's explore Recipe Haven together!
 
 ## UX
 ### User Stories
-- As a user, I want to register and log in to share my recipes.
-- As a user, I want to edit and delete the recipes I have posted.
-- As a user, I want to comment on recipes shared by others and engage with the community.
-- As a user, I want to see the most popular or highly-rated recipes.
+Recipe Haven serves three types of users: the site owner (admin), public users, and private users (registered and signed-in users). The following user stories were considered during development:
+
+- As a public user, I want to browse popular and new recipes without needing to sign up so that I can quickly explore the platform and find inspiration.
+
+- As a public user, I want to view recipes and their details without creating an account so that I can decide whether I want to join the platform.
+
+- As a private user, I want to create an account and log in so that I can share my own recipes with the community.
+
+- As a private user, I want to submit detailed recipes, including ingredients, methods, and images, so that others can recreate my dishes.
+
+- As a private user, I want to view my shared recipes and manage my profile so that I can track my contributions, as well as edit or delete the recipes I have shared.
+
+- As a private user, when I register, a profile is automatically created where I can view the recipes I have shared.
+
+- As a private user, I want to comment on recipes shared by others so that I can engage with the community and share feedback or ask questions.
+
+- As a public or private user, I want to access a Frequently Asked Questions (FAQ) section so that I can find answers to common questions without needing to contact support.
+
+- As a site owner (admin), I want to be able to moderate content on the platform to ensure that all shared recipes and comments align with community standards.
+
+- As a site owner (admin), I want to have an admin dashboard to efficiently oversee user activities, recipe submissions, and comments, and take necessary actions if required.
+
+- Private users see a toast notification displayed when i make changes.
+
+All detailed user stories can be found in a linked GitHub project [here](https://github.com/users/Tenda-M/projects/3/views/1)
 
 ### Design Thinking
 The platform is designed to offer a user-friendly and visually appealing experience. Its simple navigation, clean design, and responsive layout ensure users can easily explore and share recipes.
+
+Recipe Haven was designed with simplicity, accessibility, and functionality in mind. Key considerations during the design process were:
+
+- User Experience: The platform ensures that users of all technical abilities can easily navigate the site, whether they are browsing, sharing, or managing recipes. The interface is clean and intuitive, keeping the focus on the content.
+
+- Mobile-First Approach: With a wide range of devices in mind, Recipe Haven is fully responsive. This ensures users can browse and share recipes seamlessly whether using a desktop, tablet, or mobile phone.
+
+- Community Engagement: Recipe Haven fosters a sense of community by encouraging interaction through recipe sharing and commenting. Users can contribute to the conversation around recipes, exchanging tips and feedback.
+
+- Accessibility: Accessibility is a priority to ensure all users, including those with disabilities, can access the platform. Features such as high-contrast text, alt text for images, and keyboard navigation have been implemented to provide an inclusive experience.
+
+### Colour Scheme
+The color scheme features a soft, neutral palette of whites and light greys, complemented by a warm, earthy accent color reminiscent of a kitchen or home-cooking environment. This subtle yet welcoming design is consistent throughout the site, creating a cohesive and pleasant user experience.
+
+I used [coolors.co](https://coolors.co/000000-333333-ffffff-d2691e-e67e22-c15418-d35400-263e21) to generate my colour palette.
+
+![screenshot](documentation/design_images/coolors.png)
 
 ## Features
 ### Design Features
