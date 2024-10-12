@@ -2,7 +2,7 @@
 
 ![mock-up images](docs/readme/responsive.PNG "Website preview at different resolutions")
 
-[View The Live Project Here](#) <!-- Add link to live site here -->
+[View The Live Project Here](https://my-project4-recipe-haven-6ab6e72ce69e.herokuapp.com/) <!-- Add link to live site here -->
 
 ## Purpose of the Project
 Recipe Haven is a community-driven platform for home-cooked meal recipes. This project provides users with a space to discover delicious recipes, share their own, and engage in discussions with fellow food enthusiasts.
@@ -19,6 +19,9 @@ When users visit Recipe Haven, they are welcomed with a homepage that encourages
 3. [Features](#Features)
     1. [Design Features](#Design-Features)
     2. [Existing Features](#Existing-Features)
+       1. [Public User Features](Public-User-Features)
+       2. [Private User Features](Private-User-Features)
+       3. [Admin/Staff Features](Admin/Staff-Features)
     3. [Future Adaptations](#Future-Adaptations)
 4. [Issues and Bugs](#Issues-and-Bugs)
 5. [Technologies Used](#Technologies-Used)
@@ -103,16 +106,88 @@ I used [coolors.co](https://coolors.co/000000-333333-ffffff-d2691e-e67e22-c15418
 - Interactive navigation, including a dropdown menu for FAQ and About sections.
 
 ### Existing Features
-- User registration, login, and profile management.
-- Recipe sharing functionality with fields for title, ingredients, methods, and images.
-- Commenting and interaction on shared recipes.
-- Pagination for browsing recipes.
+
+#### Existing Features
+- **Homepage**
+ - Home: Takes users back to the homepage. The homepage prominently displays three recipe cards in each row, each featuring an image, recipe title, author, description, and post date.
+
+ ![screenshot](documentation/features/public_home.png)
+
+- **About Page**
+ - The About page of Recipe Haven features a welcoming message from the site owner, introducing the platform as a space for sharing home-cooked meal recipes and building a community of food lovers. It includes a clear and inviting layout with a personal note encouraging user participation. The page is simple yet informative, providing users with an overview of the platform's purpose and mission.
+
+![screenshot](documentation/features/about.png)
+
+- **FAQ Page**
+- The FAQ page of Recipe Haven features a clean and simple design with a list of frequently asked questions displayed in a dropdown accordion format. Users can click on each question to reveal the corresponding answer, making the page easy to navigate. The page provides helpful guidance on topics.
+![screenshot](documentation/features/)
+
+- **Contact Page**
+ - The Contact Us page of Recipe Haven features a simple and clean contact form where users can reach out with questions, feedback, or collaboration ideas. The form includes fields for the user's Name, Email, and Message, ensuring that communication is streamlined. A clear Submit button is provided at the bottom, making it easy for users to send their inquiries or feedback directly to the site owner.
+
+![screenshot](documentation/features/contact.png)
+
+- **Register Page**
+ - The Register page of Recipe Haven allows new users to create an account by filling out a simple form. The form includes fields for Username, Email (optional), and a Password, which must meet security guidelines displayed below the fields. A clear Sign Up button is provided at the bottom, and there is an option to Sign in for users who already have an account, ensuring easy navigation for both new and returning users.
+
+![screenshot](documentation/features/register.png\)
+
+- **Login Page**
+ - The Login page of Recipe Haven features a simple form for users to sign in using their Username and Password. A checkbox for Remember Me allows users to stay logged in on their device. A Sign In button is prominently displayed below the form, with links provided for users who need to register or reset their password, ensuring seamless navigation for both existing and new users.
+
+ - ![screenshot](documentation/features/login.png)
+
+#### Private User Features
+
+- **Share Page**
+
+
+![screenshot](documentation/features/)
+
+- **Logout Page**
+The Logout page of Recipe Haven provides a simple confirmation prompt asking users if they are sure they want to log out. A prominent Sign Out button is displayed in a bright color, making it easy for users to complete the action. The minimalistic design ensures clarity, with no distractions, allowing users to quickly confirm their choice to log out.
+
+![screenshot](documentation/features/logout.png)
+
+- **Profile Page**
+ - The Profile page of Recipe Haven allows users to view and manage their account details and recipes. At the top, users can see their username and email displayed, along with a profile icon. Below, the Your Recipes section lists the user's shared recipes, with options to Edit or Delete each recipe. This page provides a simple and intuitive interface for managing personal contributions to the platform.
+![screenshot](documentation/features/profile.png)
+
+- ***Edit recipe Page***
+ - The Edit Recipe page of Recipe Haven allows users to modify existing recipes. It includes fields for editing the Title, Author, Ingredients, and Methods of the recipe, as well as an option to update the Image. Users can select a new image using the Browse button or leave it unchanged. At the bottom, a Save Changes button allows users to submit their updates and save the modifications to the recipe.
+![screenshot](documentation/features/edit_recipe.png)
+
+- ***Delete recipe Page***
+ - The Delete Recipe page of Recipe Haven provides users with a clear confirmation prompt, asking if they are sure about deleting a specific recipe (in this case, "edited boiled eggs"). The page offers two distinct options: a bright Delete button for confirming the deletion and a Cancel button for aborting the action. This ensures that users can carefully confirm their decision before removing content from the platform.
+![screenshot](documentation/features/delete_recipe.png)
+
+
+#### Admin/Staff Features
+
 
 ### Future Adaptations
-- Integration of a rating system for recipes.
-- Social media sharing buttons to extend the recipe audience.
-- Implementation of a search function to filter recipes by ingredients or cuisine types.
+Future Features
 
+- Rating System: In future development, users will be able to rate recipes, helping others to find the most popular or highly-rated options.
+
+    - Private users can rate recipes using a likes system .
+    - Each recipe displays the average rating, calculated based on all submitted user ratings.
+    - Users are only allowed to rate a recipe once but may update their rating if needed.
+    - The most highly-rated recipes are featured in a “Top Recipes” section.
+
+- Advanced Recipe Search: Users will have the ability to search for recipes using filters like ingredients, meal type, and dietary preferences to find exactly what they’re looking for.
+
+    - Users can filter recipes by various categories, including ingredients, meal type (e.g., breakfast, lunch, dinner), and dietary preferences (e.g., vegan, gluten-free).
+    - Recipes are dynamically displayed based on the selected filters, updating the list without a full page reload.
+    - Users can apply multiple filters at once to refine search results (e.g., vegan + dinner).
+        Search results display a count of how many recipes match the filters.
+
+- Recipe Sharing on Social Media: Future features will allow users to share their favorite recipes directly on social media platforms to expand their reach.
+
+    - Private users can share their recipes on social media platforms such as Facebook, Twitter, and Instagram with one click.
+    - Each recipe page includes share buttons that generate a unique URL and preview for the social media platform.
+    - Users are notified of successful sharing via a toast notification.
+    - Shared recipes display the number of times they’ve been shared on social media, providing a sense of popularity.
 ## Issues and Bugs
 - Resolved issues with recipe form submission.
 - Adjusted layout for consistent display of recipe cards.
