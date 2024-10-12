@@ -121,7 +121,7 @@ I used [coolors.co](https://coolors.co/000000-333333-ffffff-d2691e-e67e22-c15418
 
 - **FAQ Page**
 - The FAQ page of Recipe Haven features a clean and simple design with a list of frequently asked questions displayed in a dropdown accordion format. Users can click on each question to reveal the corresponding answer, making the page easy to navigate. The page provides helpful guidance on topics.
-![screenshot](documentation/features/)
+![screenshot](documentation/features/FAQ.png)
 
 - **Contact Page**
  - The Contact Us page of Recipe Haven features a simple and clean contact form where users can reach out with questions, feedback, or collaboration ideas. The form includes fields for the user's Name, Email, and Message, ensuring that communication is streamlined. A clear Submit button is provided at the bottom, making it easy for users to send their inquiries or feedback directly to the site owner.
@@ -131,7 +131,7 @@ I used [coolors.co](https://coolors.co/000000-333333-ffffff-d2691e-e67e22-c15418
 - **Register Page**
  - The Register page of Recipe Haven allows new users to create an account by filling out a simple form. The form includes fields for Username, Email (optional), and a Password, which must meet security guidelines displayed below the fields. A clear Sign Up button is provided at the bottom, and there is an option to Sign in for users who already have an account, ensuring easy navigation for both new and returning users.
 
-![screenshot](documentation/features/register.png\)
+![screenshot](documentation/features/register.png)
 
 - **Login Page**
  - The Login page of Recipe Haven features a simple form for users to sign in using their Username and Password. A checkbox for Remember Me allows users to stay logged in on their device. A Sign In button is prominently displayed below the form, with links provided for users who need to register or reset their password, ensuring seamless navigation for both existing and new users.
@@ -141,9 +141,23 @@ I used [coolors.co](https://coolors.co/000000-333333-ffffff-d2691e-e67e22-c15418
 #### Private User Features
 
 - **Share Page**
+The "Share" page in Recipe Haven allows logged-in users to submit their recipes. Users can fill in details such as the title, upload an image, and provide the ingredients and methods for the recipe. The form ensures that all required fields are filled before submission, and users can preview their shared recipes after submission. The page promotes community participation by encouraging users to contribute recipes with detailed instructions.
+
+![screenshot](documentation/features/share.png)
+
+- ***Shared recipe section***
+The "Shared Recipes" section on the Share page displays a list of recipes contributed by users, featuring an image, a brief excerpt of the ingredients, and the cooking methods. Each recipe card includes a link to view the full recipe and details about the user who shared it. The layout is designed for easy browsing, allowing users to quickly access and explore a variety of recipes shared within the community.
+
+![screenshot](documentation/features/shared_recipe_section.png)
+
+- ***Shared recipe full page***
+The full shared recipe section presents a large image of the dish on the right-hand side, with the recipe title and ingredients list and methods on the left, ensuring clarity and organisation. Below the recipe, there is a comments section where users can leave feedback. If there are no comments, a message invites users to be the first to comment.
+
+![screenshot](documentation/features/full_shared_recipe.png)
+
+![screenshot](documentation/features/full_shared_recipe_comments.png)
 
 
-![screenshot](documentation/features/)
 
 - **Logout Page**
 The Logout page of Recipe Haven provides a simple confirmation prompt asking users if they are sure they want to log out. A prominent Sign Out button is displayed in a bright color, making it easy for users to complete the action. The minimalistic design ensures clarity, with no distractions, allowing users to quickly confirm their choice to log out.
@@ -152,18 +166,59 @@ The Logout page of Recipe Haven provides a simple confirmation prompt asking use
 
 - **Profile Page**
  - The Profile page of Recipe Haven allows users to view and manage their account details and recipes. At the top, users can see their username and email displayed, along with a profile icon. Below, the Your Recipes section lists the user's shared recipes, with options to Edit or Delete each recipe. This page provides a simple and intuitive interface for managing personal contributions to the platform.
+
 ![screenshot](documentation/features/profile.png)
 
 - ***Edit recipe Page***
  - The Edit Recipe page of Recipe Haven allows users to modify existing recipes. It includes fields for editing the Title, Author, Ingredients, and Methods of the recipe, as well as an option to update the Image. Users can select a new image using the Browse button or leave it unchanged. At the bottom, a Save Changes button allows users to submit their updates and save the modifications to the recipe.
+
 ![screenshot](documentation/features/edit_recipe.png)
 
 - ***Delete recipe Page***
  - The Delete Recipe page of Recipe Haven provides users with a clear confirmation prompt, asking if they are sure about deleting a specific recipe (in this case, "edited boiled eggs"). The page offers two distinct options: a bright Delete button for confirming the deletion and a Cancel button for aborting the action. This ensures that users can carefully confirm their decision before removing content from the platform.
+
 ![screenshot](documentation/features/delete_recipe.png)
+
+#### Notifications
+
+- ***Login notification***
+![screenshot](documentation/features/login_notification.png)
+
+- ***Logout notification***
+![screenshot](documentation/features/logout_notification.png)
+
+- ***shared recipe notification***
+![screenshot](documentation/features/recipe_shared_notification.png)
+
+- ***Large image notification***
+![screenshot](documentation/features/large_image_notification.png)
+
+- ***submit comment notification***
+![screenshot](documentation/features/submit_comment_notification.png)
+
+- ***Edit comment notification***
+![screenshot](documentation/features/comment_edit_notification.png)
+
+- ***Delete comment notification***
+![screenshot](documentation/features/comment_delete_notification.png)
+
+#### Comments
+The comments section allows users to leave feedback on shared recipes. Users can edit or delete their own comments, and the system notifies them when a comment is awaiting approval. Comments from other users are displayed along with the submission time, fostering interaction and discussion around the recipes.
+![screenshot](documentation/features/recipe_comments.png)
+
+- ***Edit comment***
+![screenshot](documentation/features/comment_edit.png)
+
+- ***Delete comment***
+![screenshot](documentation/features/comment_delete.png)
 
 
 #### Admin/Staff Features
+- ***Admin approve comment***
+![screenshot](documentation/features/admin_approve_comment.png)
+
+- ***Admin Delete comment***
+![screenshot](documentation/features/admin_delete_comment.png)
 
 
 ### Future Adaptations
