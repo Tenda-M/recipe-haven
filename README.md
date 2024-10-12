@@ -385,13 +385,27 @@ A local clone of this repository can be made on GitHub. Please follow the below 
 ## Credits
 ### Content
 - Recipe content was provided by the community and contributors.
+
+- The Code Institute's 'Codestar' project provides guidance for setting up Google Sheets API and Credentials: [Code Institute](https://codeinstitute.net/ie/)
+
+- W3Schools provided helpful Python tutorials. [W3Schools](https://www.w3schools.com/python/default.asp)
+
+- The Python Typing Text Effect us was from. [computing.net](https://www.101computing.net/python-typing-text-effect/)
+
+- Use of alert colour [coolors.co](https://coolors.co/000000-333333-a1a1a1-f5f5f5-ffffff-507e50-507948-304f2a-263e21)
+
+- Use of all images [Vecteezy](https://www.vecteezy.com)
+
+- All recipes were taken from the BBC Goodfood website and can be found here [BBC Good Food](https://www.bbc.co.uk/food).
+
   
 ### People
-- Project development and design by [Your Name].
+- Project development and design by [Tatenda Mudehwe].
 
 ## Acknowledgements
-Special thanks to the Recipe Haven community for their contributions and feedback.
-
+- I extend my heartfelt gratitude to my family for their unwavering support during discussions on ideas and debugging, as well as for diligently testing my work.
+- Special thanks to my mentor, Excellence Ilesanmi, for providing invaluable support and guidance throughout this journey.
+- I am deeply thankful to my fellow peers at Code Institute for their invaluable support and camaraderie.
 
 
 
