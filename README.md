@@ -273,7 +273,7 @@ Future Features
 - Cloudinary for image storage.
 
 ## Testing
-Manual testing was conducted for all key features, including recipe submission, profile management, and commenting functionality. Testing ensures that all components work smoothly on various devices and browsers.
+Manual testing was conducted for all key features, including recipe submission,  edit shared recipes, and commenting functionality. Testing ensures that all components work smoothly on various devices and browsers.
 
 ## Issues and Bugs
 - Resolved issues with recipe form submission.
