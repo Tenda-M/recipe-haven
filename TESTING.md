@@ -136,21 +136,7 @@ After rigorous testing, there are no known bugs in the code.
 
 I have validated all of my HTML files using the recommended [W3C HTML Validator](https://validator.w3.org).
 
-  | Page | W3C URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-home.png) | Pass: No Errors |
-| About | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-about.png) | Pass: No Errors |
-| FAQ | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-news.png) | Pass: No Errors |
-| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-contact.png) | Pass: No Errors |
-| Base | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-base.png) | Pass: No Errors |
-| Post-detail | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-detail.png) | Pass: No Errors |
-| share | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-form.png) | Pass: No Errors |
-| share_detail | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-confirm-delete.png) | Pass: No Errors |
-| login | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-400.png) | Pass: No Errors |
-| log out| [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-403.png) | Pass: No Errors |
-| Profile | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-404.png) | Pass: No Errors |
-|Register| [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-500.png) | Pass: No Errors |
-
+   ![W3C](documentation/validation/html_checker.png)
 
 
   ### CSS
@@ -225,6 +211,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 ## Lighthouse Audit
 
 I have tested my deployed project using the Lighthouse Audit tool to identify and address any major performance, accessibility, SEO, and best practices issues.
+![lighthouse](documentation/validation/lighthouse.png)
 
 ### Website App Templates -
 | Page | Size | Screenshot | Notes |
