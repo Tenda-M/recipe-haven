@@ -6,9 +6,12 @@ from cloudinary.models import CloudinaryField
 class SharedRecipe(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False)
     author = models.CharField(max_length=100, blank=False, null=False)
-    image = CloudinaryField('image', blank=False, null=False)  # Image is required
-    ingredients = models.TextField(default="No ingredients provided", blank=False, null=False)  # Required
-    methods = models.TextField(default="No methods provided", blank=False, null=False)  # Required
+    image = CloudinaryField('image', blank=False, null=False)
+    # Image is required
+    ingredients = models.TextField(default="No ingredients provided",
+                                           blank=False, null=False)
+    methods = models.TextField(default="No methods provided",
+                                       blank=False, null=False)
     shared_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -16,7 +19,8 @@ class SharedRecipe(models.Model):
 
     @property
     def ingredients_excerpt(self):
-        return self.ingredients[:100]  # Show the first 100 characters of ingredients
+        return self.ingredients[:100]
+        # Show the first 100 characters of ingredients
 
     @property
     def methods_excerpt(self):
@@ -25,7 +29,8 @@ class SharedRecipe(models.Model):
 
 # To Ensure the code has a comment model linked to SharedRecipe
 class SharedRecipeComment(models.Model):
-    recipe = models.ForeignKey(SharedRecipe, on_delete=models.CASCADE, related_name='comments')
+    recipe = models.ForeignKey(SharedRecipe, on_delete=models.CASCADE,
+                               related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

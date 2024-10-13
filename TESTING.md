@@ -182,25 +182,24 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_models.png) | Pass: No Errors |
 | urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_urls.png) | Pass: No Errors |
 | views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_views.png) | Pass: No Errors |
+
 #### Validation For faq App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_faq_admin.png) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_faq_apps.png) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_faq_models.png) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_faq_urls.png) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_faq_views.png) | Pass: No Errors |
 
 #### Validation For profiles App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_admin.png) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_apps.png) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_models.png) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_urls.png) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_views.png) | Pass: No Errors |
 
 #### Validation For share App
 | File | CI URL | Screenshot | Notes |
