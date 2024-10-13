@@ -4,14 +4,6 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-# Cloudinary Storage
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 # Message Tags for Bootstrap Alerts
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
@@ -29,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["8000-tendam-recipehaven-jewf8wckm85.ws.codeinstitute-ide.net", ".herokuapp.com"]
 
