@@ -1,9 +1,15 @@
+<!-- faq.html: A page to display frequently asked questions (FAQs) -->
+
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="container my-5">
     <h2>FAQs</h2>
+    
+    <!-- Bootstrap accordion to display FAQ items -->
     <div class="accordion" id="faqAccordion">
+        
+        <!-- First FAQ item -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -16,9 +22,8 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Repeat for other FAQ items -->
-        
+
+        <!-- Second FAQ item -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -31,7 +36,10 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Additional FAQ items can be added similarly -->
+
+        <!-- Third FAQ item -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
@@ -45,6 +53,7 @@
             </div>
         </div>
 
+        <!-- Fourth FAQ item -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFour">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
@@ -58,6 +67,7 @@
             </div>
         </div>
 
+        <!-- Fifth FAQ item -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFive">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
