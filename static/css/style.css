@@ -56,7 +56,7 @@ p {
     width: 100%;  /* Make the image responsive to the container width */
     height: auto;  /* Maintain the aspect ratio by adjusting the height automatically */
     object-fit: cover;  /* Fills the container without stretching the image */
-    max-height: 400px;  /* Optional: limits the image height to avoid it becoming too tall */
+    max-height: 400px;  /*  limits the image height to avoid it becoming too tall */
 }
 
 /* Navbar & Footer */
@@ -64,25 +64,6 @@ p {
     background-color: #A0522D; /* Brown color */
     color: white; /* White text */
 }
-
-/*.navbar .nav-link,
-.navbar .navbar-brand {
-    color: white;
-}
-
-.navbar .nav-link:hover {
-    color: #FFE4C4; /* Cream hover 
-}*/
-
-/*.navbar .navbar-text {
-    color: #f5eded !important; /* Apply a stronger color */
-   /* font-weight: bold; /* Optional: Bold text 
-}*/
-/* navbar text *//*
-.navbar-text {
-    color: #800e0e !important; /* Apply the desired color with !important 
-    font-weight: bold;
-}*/
 
 /* Footer text */
 .footer p {
@@ -121,7 +102,7 @@ p {
 }
 
 /* Active link: Add a highlight or halo around the active link */
-.navbar .nav-link.active, /* Use this if you are manually adding an 'active' class */
+.navbar .nav-link.active, 
 .navbar .nav-link:focus, 
 .navbar .nav-link:active {
     color: #FFE4C4 !important;  /* Change the text color for the active page */
@@ -135,6 +116,9 @@ form {
     padding: 0;
 }
 
+/*
+Credit https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email
+*/
 input[type="text"], 
 input[type="email"], 
 textarea, 
@@ -183,10 +167,10 @@ input[type="file"] {
     background-color: #FBBF24; /* Same yellow as other action buttons */
     color: #fff; /* White text for contrast */
     border: none; /* No border */
-    padding: 0.5em 1em; /* Consistent padding */
+    padding: 0.5em 1em;
     border-radius: 0.25em; /* Rounded corners */
-    font-size: 1em; /* Text size */
-    margin-top: 1em; /* Space above */
+    font-size: 1em; 
+    margin-top: 1em; 
     cursor: pointer; /* Pointer on hover */
     text-decoration: none; /* Remove underline from text */
 }
@@ -200,7 +184,7 @@ input[type="file"] {
     background-color: #FBBF24; /* Custom yellow color */
     color: #fff; /* White text */
     border: none;
-    padding: 0.5em 1em; /* Adjust padding as needed */
+    padding: 0.5em 1em; 
     border-radius: 0.25em; /* Rounded corners */
     font-size: 1em; /* Text size */
     margin-top: 1em; /* Space above */
@@ -229,8 +213,6 @@ input[type="file"] {
     max-width: 100%;
     padding: 0 15px;
     margin: 0 auto;
-    /* height: auto;  Ensure height is flexible */
-    /* min-height: 100vh; Optionally make sure it's at least as tall as the viewport */
 }
 
 .card {
@@ -267,26 +249,24 @@ input[type="file"] {
     color: #6C757D; /* Soft gray */
 }
 
-/* Shared Recipes Adjustments */
 /* Style for the shared recipes section */
 .shared-recipes-section {
     background-color: #A0522D; /* Same brown color as the footer */
-    padding: 1em; /* Add padding for spacing */
-    text-align: center; /* Center text within the section */
+    padding: 1em; 
+    text-align: center; 
     margin-bottom: 2em; /* Space below the section */
-    border-radius: 5px; /* Optional: add rounded corners */
+    border-radius: 5px; 
 }
 
 /* Center and style the shared recipes title */
 .shared-recipes-title {
     color: #fff; /* White text color */
     font-weight: bold; /* Bold text */
-    font-size: 2em; /* Increase font size */
-    margin: 0 auto; /* Center heading within section */
-    text-decoration: underline; /* Underline the text */
+    font-size: 2em; 
+    margin: 0 auto; 
+    text-decoration: underline; 
     display: inline-block; /* Adjust display to better control centering */
 }
-
 
 .shared-card {
     border: #ffc107;
@@ -319,7 +299,7 @@ input[type="file"] {
 }
 /*** edit shared recipe page***/
 .edit-shared-recipe {
-    margin-bottom: 20px; /* Or any space you'd like */
+    margin-bottom: 20px; 
 }
 
 /***************************************************************************/
@@ -330,7 +310,7 @@ input[type="file"] {
     width: 100%;
     height: auto;
     object-fit: cover; /* Ensures the image covers the container without distortion */
-    max-height: 400px; /* You can adjust this to the desired height */
+    max-height: 400px;
 }
 
 /* Ensure the row contains both sections side by side */
@@ -346,7 +326,7 @@ input[type="file"] {
     padding: 15px;
     background-color: #F7F5E6;
     height: 100%; /* Ensures both sections align */
-    margin-left: 20px; /* Add some margin on the left */
+    margin-left: 20px; 
     margin-right: 20px; /* Add some margin on the right */
     max-width: 98%;
 
@@ -365,7 +345,7 @@ input[type="file"] {
     padding: 15px;
     background-color: #F7F5E6;
     height: 100%; /* Ensures both sections align */
-    margin-left: 20px; /* Add some margin on the left */
+    margin-left: 20px; 
     margin-right: 20px; /* Add some margin on the right */
     max-width: 98%;
 }
@@ -406,9 +386,6 @@ input[type="file"] {
     font-size: 1rem;
 }
 
-
-
-
 /***************************************************************************/
 /* About page*/
 /***************************************************************************/
@@ -430,7 +407,7 @@ input[type="file"] {
 /* Target only the shared_recipes.html container */
 .shared-recipes-container {
     min-height: 100vh;  /* Ensure it grows at least the full height of the viewport */
-    padding-bottom: 50px;  /* Add padding if needed */
+    padding-bottom: 50px;  
     height: auto;  /* Ensure height is flexible */
 
 }
@@ -453,17 +430,17 @@ input[type="file"] {
 .alert {
     max-width: 600px;  /* Limit the width of the notification */
     margin: 20px auto;  /* Center it by using auto margins */
-    border: 2px solid #a05a2c;  /* Add a border matching your site's color */
-    background-color: #ffeadb;  /* Soft background color matching the theme */
+    border: 2px solid #a05a2c;  
+    background-color: #ffeadb;  
     padding: 10px 20px;  /* Add padding for better spacing */
-    border-radius: 5px;  /* Add a slight border radius for a smoother look */
+    border-radius: 5px; 
     text-align: center;  /* Center the text inside */
-    font-size: 16px;  /* Adjust font size if needed */
+    font-size: 16px; 
 }
 
 /* Custom container to add padding on the sides */
 .custom-container {
-    max-width: 100%;  /* Adjust this value as needed for the page width */
+    max-width: 100%;  
     margin: 0 auto;  /* Center the container */
     padding: 0 20px;  /* Add padding on the left and right sides */
 }
@@ -520,14 +497,6 @@ hr:not([size]) {
 	margin-bottom: 40px;
 }
 
-/* Comment Section Styling 
-.comment-section {
-    background-color: #F7F5E6; /* Light cream background consistent with the rest of the site 
-    border: 2px solid #FFA500; /* Orange border for consistency 
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}*/
 /**************  Comment section  ************************
 /* Spacing and colors inside the comment box */
 .comment-box {
@@ -594,8 +563,8 @@ ul li, ol li {
     padding: 15px;
     background-color: #F7F5E6;
     height: 100%; /* Ensures both sections align */
-    margin-left: 20px; /* Add some margin on the left */
-    margin-right: 20px; /* Add some margin on the right */
+    margin-left: 20px; 
+    margin-right: 20px; 
     max-width: 98%;
 }
 
@@ -607,8 +576,8 @@ ul li, ol li {
     padding: 15px;
     background-color: #F7F5E6;
     height: 100%; /* Ensures both sections align */
-    margin-left: 20px; /* Add some margin on the left */
-    margin-right: 20px; /* Add some margin on the right */
+    margin-left: 20px; 
+    margin-right: 20px; 
     max-width: 98%;
 }
 
@@ -617,14 +586,6 @@ ul li, ol li {
     background-color: #FFF8E7;
 }
 
-/* Individual Comment Box 
-.comment-box {
-    padding: 15px;
-    margin-bottom: 20px;
-    background-color: #FFF8E7;
-    border: 2px solid #FFA500;
-    border-radius: 5px;
-}*/
 
 .comments-title {
     font-size: 1.5rem;
@@ -675,12 +636,11 @@ button[type="submit"]:hover {
     }
 }
 
-
 /***************************************************************************/
 /* FAQ page*/
 /***************************************************************************/
 .accordion-button {
-    background-color: #E76F51; /* Warm brown color matching the site's theme */
+    background-color: #E76F51; 
     color: white; /* White text */
     border: none; /* Remove border */
 }
@@ -696,17 +656,16 @@ button[type="submit"]:hover {
 }
 
 .accordion-item {
-    border: 1px solid #A0522D; /* Match border to the site's brown theme */
+    border: 1px solid #A0522D; 
 }
 
 .accordion-body {
-    background-color: #FAF3DD; /* Soft light yellow background */
+    background-color: #FAF3DD; 
     color: #333; /* Darker text color for readability */
 }
 
 h2 {
-    color: #A0522D; /* Match heading color to site's brown theme */
-    font-weight: bold;
+    color: #A0522D; 
     margin-bottom: 1.5rem;
 }
 
@@ -735,7 +694,7 @@ input[type="password"] {
 }
 
 .btn-signup {
-    background-color: #FBBF24; /* Match your submit button color */
+    background-color: #FBBF24; 
     color: #fff;
     border: none;
     padding: 0.5em 1em;

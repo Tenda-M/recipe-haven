@@ -43,6 +43,8 @@ In Recipe Haven, strong input validation mechanisms are in place to ensure the i
 ## Browser Testing 
 Baker's Heart was tested on the Heroku app website across multiple browsers, including Google Chrome, Mozilla Firefox, and Safari, without encountering any issues.
 
+-----
+
 ## Manual Testing  
 
 ### Testing Features 
@@ -100,3 +102,64 @@ Baker's Heart was tested on the Heroku app website across multiple browsers, inc
 | 10. As a site owner (admin), I want an admin dashboard to efficiently oversee user activities, recipe submissions, and comments.      | Admin Dashboard                      | Yes     | Admin dashboard allows efficient oversight of activities.   |
 | 11. As a private user, I want to see a toast notification when I make changes, such as editing or deleting a recipe.                   | Toast Notifications                  | Yes     | Toast notifications are shown for recipe edits and deletions. |
 
+<br>
+
+## Bugs 
+
+### Bugs Found and Fixed in Recipe Haven Project
+
+1. **Bug: Recipe Detail Page 500 Server Error**  
+   **Issue**: Clicking on a shared recipe sometimes resulted in a 500 server error.  
+   **Fix**: Updated the `share/views.py` to properly handle the form submission and ensured the recipe details page displayed correctly when accessed.
+
+2. **Bug: Comment Form Not Displaying**  
+   **Issue**: The comment form was not appearing on the shared recipe detail page, preventing users from submitting comments.  
+   **Fix**: Corrected the `recipe_detail.html` template and linked the comment form properly, ensuring it is rendered on the page.
+
+3. **Bug: Layout Issue with Recipe Cards**  
+   **Issue**: The 'View Full Recipe' button on recipe cards was being pushed down due to inconsistent image sizes.  
+   **Fix**: Applied consistent card heights and utilized Flexbox for layout adjustments, ensuring buttons aligned correctly regardless of image size.
+
+4. **Bug: Shared Recipe Form Not Submitting**  
+   **Issue**: The form on the share recipe page was not submitting properly, causing no recipes to be saved.  
+   **Fix**: Updated the `share_page_view` function to correctly handle form data and save submissions, ensuring the form worked as intended.
+
+<br>  
+
+## Known Bugs  
+After rigorous testing, there are no known bugs in the code.
+
+## Responsiveness
+
+## Code validation
+  ### HTML
+
+  ### CSS
+   I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+   | File      | Jigsaw URL | Screenshot | Notes              |
+|-----------|------------|------------|--------------------|
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator) |![screenshot](documentation/css_validation_style.png) | Pass: No Errors |
+
+  ### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+#### Validation For Recipe Haven App
+
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+
+| File        | CI URL      | Screenshot                                                                                       | Notes           |
+|-------------|-------------|--------------------------------------------------------------------------------------------------|-----------------|
+| settings.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_settings.png)                                   | Pass: No Errors |
+| urls.py     | [PEP8 CI]() | ![screenshot](documentation/validation/validation_recipe_urls.png)         | Pass: No Errors |
+| wsgi.py     | [PEP8 CI]() | ![screenshot](documentation/validation/validation_wsgi.png)               | Pass: No Errors |
+
+ 
+## Lighthouse Audit
+
+[Return to README](README.md)
+
+
+
+
+[def]: documentation/validation_settings.png

@@ -274,7 +274,7 @@ Future Features
 
 ## Testing
 Manual testing was conducted for all key features, including recipe submission,  edit shared recipes, and commenting functionality. Testing ensures that all components work smoothly on various devices and browsers.
-
+For all testing, please refer to the [TESTING.md](documentation]TESTING.md) file.
 ## Issues and Bugs
 - Resolved issues with recipe form submission.
 - Adjusted layout for consistent display of recipe cards.
@@ -397,6 +397,8 @@ A local clone of this repository can be made on GitHub. Please follow the below 
 - Use of all images [Vecteezy](https://www.vecteezy.com)
 
 - All recipes were taken from the BBC Goodfood website and can be found here [BBC Good Food](https://www.bbc.co.uk/food).
+
+- HTML, CSS, javascript[mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
 
   
 ### People
