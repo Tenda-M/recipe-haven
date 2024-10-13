@@ -272,6 +272,10 @@ Future Features
 - Bootstrap for responsive design and layout.
 - Cloudinary for image storage.
 
+## Database Design
+- While planning this project, I drew up an Entity Relationship Diagram to help me visualise the database models and their relationships.
+![screenshot](documentation/design_images/database.png)
+
 ## Testing
 Manual testing was conducted for all key features, including recipe submission,  edit shared recipes, and commenting functionality. Testing ensures that all components work smoothly on various devices and browsers.
 For all testing, please refer to the [TESTING.md](documentation]TESTING.md) file.
