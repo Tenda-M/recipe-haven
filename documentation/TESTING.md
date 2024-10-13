@@ -43,4 +43,60 @@ In Recipe Haven, strong input validation mechanisms are in place to ensure the i
 ## Browser Testing 
 Baker's Heart was tested on the Heroku app website across multiple browsers, including Google Chrome, Mozilla Firefox, and Safari, without encountering any issues.
 
-    
+## Manual Testing  
+
+### Testing Features 
+
+| Feature                        | Tested?  | User Feedback Provided                                        |
+|---------------------------------|----------|---------------------------------------------------------------|
+| Home Page                       | Yes      | Home page loads successfully with links to key features       |
+| Navbar Active State (Home)      | Yes      | Navbar 'Home' link changes color when user is on home page    |
+| About Page                      | Yes      | About page loads successfully with relevant content           |
+| FAQ Page                        | Yes      | FAQ page accessible from dropdown, loads successfully         |
+| Dropdown Menu Functionality     | Yes      | Dropdown menu works correctly to access FAQ and About pages   |
+| Contact Us Page                 | Yes      | Contact page loads and displays the contact form              |
+| Contact Us Form                 | Yes      | Users can submit the contact form successfully                |
+| Contact Us Feature              | Yes      | Contact submissions are stored and trigger success message    |
+| Share Page                      | Yes      | Share page loads successfully and displays share form         |
+| Share Form                      | Yes      | Share form validates input and uploads recipe successfully    |
+| Shared Recipe Page              | Yes      | Users can click on shared recipes, and the recipe page loads  |
+| Comment Submission (Recipes)    | Yes      | Comments successfully submitted with confirmation message     |
+| Recipe Sharing Form             | Yes      | Missing fields (ingredients, methods) prompt error messages   |
+| Image Upload Validation         | Yes      | Image exceeds 10MB size limit triggers an error message       |
+| Log In Page                     | Yes      | Log in page loads successfully and allows users to log in     |
+| Log Out Page                    | Yes      | Log out functionality works, users are logged out successfully|
+| Register Page                   | Yes      | Registration page loads successfully with form input validation|
+| Register Form                   | Yes      | Users can register with validation, form submission successful|
+| Profile Page                    | Yes      | Profile page displays user information and shared recipes     |
+| Recipe Edit Feature             | Yes      | Successful edits redirect to user profile with confirmation   |
+| Recipe Deletion Feature         | Yes      | Successful deletion triggers a confirmation message           |
+| Pagination for Recipe List      | Yes      | Pagination works as expected, smooth navigation               |
+| Recipe Detail View              | Yes      | Recipe detail page displays image, title, ingredients, and methods |
+| Form Validation for Sharing     | Yes      | Invalid inputs (e.g., missing fields) trigger validation errors|
+
+### Testing Navbar 
+| Navbar Link                    | Tested?  | User Feedback Provided                                        |
+|---------------------------------|----------|---------------------------------------------------------------|
+| Navbar Active State (Home)      | Yes      | Navbar 'Home' link changes color when user is on home page    |
+| Navbar Active State (About)     | Yes      | Navbar 'About' link changes color when user is on About page  |
+| Navbar Active State (Share)     | Yes      | Navbar 'Share' link changes color when user is on Share page  |
+| Navbar Active State (Login)     | Yes      | Navbar 'Login' link changes color when user is on Login page  |
+| Navbar Active State (Contact Us)| Yes      | Navbar 'Contact Us' link changes color when user is on Contact Us page |
+| Navbar Active State (Logout)    | Yes      | Navbar 'Logout' link changes color when user is logged out    |
+| Navbar Active State (Profile)   | Yes      | Navbar 'Profile' link changes color when user is on Profile page |
+
+### Testing User Stories 
+| User Story                                                                                                                            | Feature                              | Tested? | User Feedback Provided                                     |
+|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|---------|------------------------------------------------------------|
+| 1. As a public user, I want to browse popular and new recipes without needing to sign up so that I can quickly explore the platform.   | Browse Recipes                      | Yes     | Public users can browse recipes without signing up.         |
+| 2. As a public user, I want to view recipes and their details without creating an account so that I can decide whether to join.        | View Recipe Details                  | Yes     | Recipe details are fully visible without signing up.        |
+| 3. As a private user, I want to create an account and log in so that I can share my own recipes with the community.                    | User Registration and Login          | Yes     | Users can register, log in, and start sharing recipes.      |
+| 4. As a private user, I want to submit detailed recipes, including ingredients, methods, and images, so others can recreate my dishes. | Submit Recipe Form                   | Yes     | Users can submit recipes with ingredients, methods, and images. |
+| 5. As a private user, I want to view my shared recipes and manage my profile to track, edit, or delete my shared recipes.              | Manage Shared Recipes                | Yes     | Users can edit or delete their shared recipes.              |
+| 6. As a private user, when I register, a profile is automatically created where I can view the recipes I have shared.                  | Automatic Profile Creation           | Yes     | Profiles are automatically created upon registration.       |
+| 7. As a private user, I want to comment on recipes shared by others to engage with the community and share feedback or ask questions.  | Comment on Shared Recipes            | Yes     | Users can comment on recipes and engage with the community. |
+| 8. As a public or private user, I want to access a FAQ section to find answers to common questions without needing to contact support. | FAQ Section                          | Yes     | FAQ section is accessible via the dropdown.                 |
+| 9. As a site owner (admin), I want to moderate content on the platform to ensure recipes and comments align with community standards.  | Content Moderation                   | Yes     | Admins can moderate recipe and comment content.             |
+| 10. As a site owner (admin), I want an admin dashboard to efficiently oversee user activities, recipe submissions, and comments.      | Admin Dashboard                      | Yes     | Admin dashboard allows efficient oversight of activities.   |
+| 11. As a private user, I want to see a toast notification when I make changes, such as editing or deleting a recipe.                   | Toast Notifications                  | Yes     | Toast notifications are shown for recipe edits and deletions. |
+
