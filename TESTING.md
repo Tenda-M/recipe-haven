@@ -134,11 +134,30 @@ After rigorous testing, there are no known bugs in the code.
 ## Code validation
   ### HTML
 
+I have validated all of my HTML files using the recommended [W3C HTML Validator](https://validator.w3.org).
+
+  | Page | W3C URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-home.png) | Pass: No Errors |
+| About | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-about.png) | Pass: No Errors |
+| FAQ | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-news.png) | Pass: No Errors |
+| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-contact.png) | Pass: No Errors |
+| Base | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-base.png) | Pass: No Errors |
+| Post-detail | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-detail.png) | Pass: No Errors |
+| share | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-form.png) | Pass: No Errors |
+| share_detail | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-post-confirm-delete.png) | Pass: No Errors |
+| login | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-400.png) | Pass: No Errors |
+| log out| [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-403.png) | Pass: No Errors |
+| Profile | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-404.png) | Pass: No Errors |
+|Register| [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbushy-park-tennis-club-896947b1504e.herokuapp.com%2F) | ![screenshot](documentation/validation/html/html-validation-500.png) | Pass: No Errors |
+
+
+
   ### CSS
    I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
    | File      | Jigsaw URL | Screenshot | Notes              |
 |-----------|------------|------------|--------------------|
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator) |![screenshot](documentation/css_validation_style.png) | Pass: No Errors |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator) |![screenshot](documentation/validation/css_validation_style.png) | Pass: No Errors |
 
   ### Python
 
@@ -201,17 +220,23 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_urls.png) | Pass: No Errors |
 | views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_profile_views.png) | Pass: No Errors |
 
-#### Validation For share App
-| File | CI URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
-| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+
+
 ## Lighthouse Audit
 
+I have tested my deployed project using the Lighthouse Audit tool to identify and address any major performance, accessibility, SEO, and best practices issues.
+
+### Website App Templates -
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-home.png) | Some minor performance warnings |
+| About | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-about.png) | Some minor performance warnings |
+| News | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-news.png) | Warning about link text (ignored as link is a Bootstrap button) |
+| Contact | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-contact.png) | No warnings |
+| Base | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-base.png) | No warnings |
+| Post-Detail | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-detail.png) | No warnings |
+| Post-Form | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-form.png) | No warnings |
+| Post-Confirm-Delete | Desktop | ![screenshot](documentation/lighthouse/website/desktop/website-desktop-post-confirm-delete.png) |
 [Return to README](README.md)
 
 

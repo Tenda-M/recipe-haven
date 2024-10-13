@@ -33,19 +33,15 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'AAaX-BtCUrpzJfFptRAgxGIGc2Y',
 }
 
-# Explicitly mapping Django's message levels to Bootstrap's alert classes for
-consistent styling
+# Explicitly mapping Django's message levels to Bootstrap's alert.
 MESSAGE_TAGS = {
     messages.DEBUG: 'debug',          # Maps DEBUG messages to 'debug' class.
-    messages.INFO: 'info',            """ Maps INFO messages to 'info' class
-    (useful for informational alerts)."""
-    messages.SUCCESS: 'success',      """ Maps SUCCESS messages to 'success'
-    class (for success notifications)."""
-    messages.WARNING: 'warning',      """ Maps WARNING messages to 'warning'
-    class (for caution alerts)."""
-    messages.ERROR: 'danger',         """ Maps ERROR messages to 'danger' class
-    (for critical errors)."""
+    messages.INFO: 'info',           
+    messages.SUCCESS: 'success',     
+    messages.WARNING: 'warning',      
+    messages.ERROR: 'danger',       
 }
+
 
 # Default storage backend for media files to Cloudinary
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
