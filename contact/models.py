@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ContactUsForm(models.Model):
     """
     Stores a single contact us request message
@@ -11,4 +12,3 @@ class ContactUsForm(models.Model):
 
     def __str__(self):
         return f"Contact from {self.name}"
-

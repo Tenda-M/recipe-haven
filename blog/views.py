@@ -12,7 +12,8 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 6
-    
+
+
 def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -30,9 +31,13 @@ def post_detail(request, slug):
             comment.save()
 
             # Adding the message only once
-            messages.success(request, 'Comment submitted and awaiting approval')
+            messages.success(
+              request, 'Comment submitted and awaiting approval'
+            )
 
-            return HttpResponseRedirect(reverse('post_detail', args=[post.slug]))
+            return HttpResponseRedirect(
+                reverse('post_detail', args=[post.slug])
+            )
 
     return render(
         request,
@@ -46,8 +51,7 @@ def post_detail(request, slug):
     )
 
 
-
-@login_required  # Make sure this is properly aligned to not be nested in `post_detail`
+@login_required
 def edit_comment_view(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id, author=request.user)
 
@@ -56,11 +60,17 @@ def edit_comment_view(request, comment_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your comment has been updated.')
-            return redirect('post_detail', slug=comment.post.slug)
+            return redirect(
+                'post_detail', slug=comment.post.slug
+            )
     else:
         form = CommentForm(instance=comment)
 
-    return render(request, 'blog/edit_comment.html', {'form': form, 'comment': comment})
+    return render(
+        request,
+        'blog/edit_comment.html',
+        {'form': form, 'comment': comment}
+    )
 
 
 @login_required
@@ -73,4 +83,8 @@ def delete_comment_view(request, comment_id):
         messages.success(request, 'Your comment has been deleted.')
         return redirect('post_detail', slug=post_slug)
 
-    return render(request, 'blog/delete_comment.html', {'comment': comment})
+    return render(
+        request,
+        'blog/delete_comment.html',
+        {'comment': comment}
+    )

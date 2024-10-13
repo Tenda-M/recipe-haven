@@ -154,7 +154,63 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | urls.py     | [PEP8 CI]() | ![screenshot](documentation/validation/validation_recipe_urls.png)         | Pass: No Errors |
 | wsgi.py     | [PEP8 CI]() | ![screenshot](documentation/validation/validation_wsgi.png)               | Pass: No Errors |
 
- 
+#### Validation For about App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_about_admin.png) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_about_apps.png) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_about_models.png) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_about_urls.png) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_about_viewls.png) | Pass: No Errors |
+
+#### Validation For blog App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_admin.png) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_apps.png) | Pass: No Errors |
+| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_forms.png) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_models.png) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_urls.png) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_blog_views.png) | Pass: No Errors |
+
+#### Validation For contact App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_admin.png) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_apps.png) | Pass: No Errors |
+| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_forms.png) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_models.png) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_urls.png) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/validation_contact_views.png) | Pass: No Errors |
+#### Validation For faq App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+
+#### Validation For profiles App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+
+#### Validation For share App
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| apps.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| forms.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| models.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| urls.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
+| views.py | [PEP8 CI]() | ![screenshot](documentation/validation/) | Pass: No Errors |
 ## Lighthouse Audit
 
 [Return to README](README.md)
