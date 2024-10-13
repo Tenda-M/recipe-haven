@@ -37,6 +37,7 @@ def delete_recipe_view(request, recipe_id):
     return render(request, 'share/delete_recipe.html', {'recipe': recipe})
 
 
+@login_required
 def share_page_view(request):
     shared_recipes = SharedRecipe.objects.all()
 
@@ -61,7 +62,6 @@ def share_page_view(request):
         'share/shared_recipes.html',
         {'shared_recipes': shared_recipes, 'form': form}
     )
-
 
 @login_required
 def recipe_detail_view(request, recipe_id):
