@@ -1,1 +1,1 @@
-web: gunicorn recipe_haven.wsgi
+web: gunicorn recipe_haven.wsgi --log-file -
