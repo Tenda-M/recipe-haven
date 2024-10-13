@@ -1,3 +1,4 @@
+
 """
 Django settings for recipe_haven project.
 
@@ -13,56 +14,27 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-
-# If 'env.py' exists, import it (used for environment variables)
 if os.path.isfile('env.py'):
     import env
 
-# Importing message constants from Django's built-in messages framework
-from django.contrib.messages import constants as messages
 
-# Cloudinary configuration for media file storage
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-# Configuration for Cloudinary media storage
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dfuow5lo6',
-    'API_KEY': '977516553948292',
-    'API_SECRET': 'AAaX-BtCUrpzJfFptRAgxGIGc2Y',
-}
-
-# Explicitly mapping Django's message levels to Bootstrap's alert.
-MESSAGE_TAGS = {
-    messages.DEBUG: 'debug',          # Maps DEBUG messages to 'debug' class.
-    messages.INFO: 'info',           
-    messages.SUCCESS: 'success',     
-    messages.WARNING: 'warning',      
-    messages.ERROR: 'danger',       
-}
-
-
-# Default storage backend for media files to Cloudinary
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-# Base directory path for the project
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Secret key for the project (retrieved from environment variables)
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# Turn off debug mode in production
-DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG =  False
 
-# List of allowed hosts for the project
-ALLOWED_HOSTS = [
-    "8000-tendam-recipehaven-jewf8wckm85.ws.codeinstitute-ide.net",
-    ".herokuapp.com"
-]
+ALLOWED_HOSTS = ["8000-tendam-recipehaven-jewf8wckm85.ws.codeinstitute-ide.net",".herokuapp.com"]
 
 
-# Installed applications for the project
+# Application definition
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -82,24 +54,21 @@ INSTALLED_APPS = [
     'cloudinary',
     'about',
     'contact',
-    'faq',
-    'share',
-    'profiles',
+     'faq',
+     'share',
+     'profiles',
 ]
 
-# Django site ID (used with allauth)
 SITE_ID = 1
-
-# Redirect URLs for login/logout
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# Crispy Forms configuration for Bootstrap5
+
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-# Middleware used in the project
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -112,15 +81,16 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-# Root URL configuration
 ROOT_URLCONF = 'recipe_haven.urls'
 
-# Template directories and context processors
+# TEMPLATES_DIR should be defined before it is used in TEMPLATES.
+#TEMPLATES_DIR for loading templates from the top-level templates folder
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],  # Template directory defined here
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,58 +103,73 @@ TEMPLATES = [
     },
 ]
 
-# WSGI application definition
 WSGI_APPLICATION = 'recipe_haven.wsgi.application'
 
-# Database configuration
+
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# Trusted CSRF origins
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
 ]
 
-# Password validation configuration
+
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.'
-                'UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.'
-                'MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.'
-                'CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.'
-                'NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
-
-# Account email verification settings (turned off)
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# Internationalization settings
+# Internationalization
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
 LANGUAGE_CODE = 'en-us'
+
 TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_TZ = True
 
-# Static and media files configuration
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Static files directory
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Media file settings for uploaded files
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+# profile Media files (Uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Default primary key field type for models
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

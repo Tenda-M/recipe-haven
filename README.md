@@ -400,9 +400,9 @@ A local clone of this repository can be made on GitHub. Please follow the below 
 
 - HTML, CSS, javascript[mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
 
-- django urls [django](https://docs.djangoproject.com/en/5.1/ref/urls/)
+- Use of django urls [django](https://docs.djangoproject.com/en/5.1/ref/urls/)
 
-- creat a profile tutorial [youtube](https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=9)
+- Use of profile creation [youtube](https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=9)
 
   
 ### People
